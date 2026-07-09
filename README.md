@@ -1,6 +1,6 @@
 # 100 App Toolkit Buildability Study
 
-This repo is a take-home assignment artifact for researching whether 100 apps can become agent-callable Composio-style toolkits.
+This repo contains a research pipeline and static case study for evaluating whether 100 apps can become agent-callable Composio-style toolkits.
 
 The reviewer-facing deliverable is the static HTML slideshow in `docs/index.html`.
 
