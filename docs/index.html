@@ -3,129 +3,124 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>100 App Toolkit Buildability Study</title>
+    <title>100 App Toolkit Readiness</title>
     <script src="./assets/research-data.js"></script>
     <style>
       :root {
-        --paper: #f4efe4;
-        --ink: #14120f;
-        --muted: #71685d;
-        --rule: #d9cfbf;
-        --panel: #fffaf0;
-        --green: #21734b;
-        --blue: #255f95;
-        --amber: #a46a17;
-        --red: #a33b32;
-        --shadow: 0 22px 60px rgba(28, 24, 18, 0.14);
+        --bg: #f7f8f6;
+        --panel: #ffffff;
+        --ink: #202224;
+        --muted: #6b7075;
+        --line: #dfe3e1;
+        --soft: #eef1ef;
+        --green: #18734d;
+        --orange: #b96b16;
+        --red: #ad3e34;
+        --blue: #2f5f8f;
       }
 
       * { box-sizing: border-box; }
 
-      html, body {
+      html,
+      body {
         margin: 0;
         min-height: 100%;
-        color: var(--ink);
-        background:
-          linear-gradient(90deg, rgba(20,18,15,0.06) 1px, transparent 1px) 0 0 / 42px 42px,
-          linear-gradient(rgba(20,18,15,0.045) 1px, transparent 1px) 0 0 / 42px 42px,
-          var(--paper);
-        font-family: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
-        letter-spacing: 0;
         overflow: hidden;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Helvetica Neue", "Segoe UI", ui-sans-serif, Arial, sans-serif;
+        letter-spacing: 0;
       }
 
       a { color: inherit; }
 
-      .app {
+      .shell {
         height: 100vh;
         display: grid;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: 56px 1fr 54px;
       }
 
-      header,
-      footer {
-        display: flex;
+      .topbar,
+      .bottombar {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
         align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        padding: 16px clamp(16px, 3vw, 36px);
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--muted);
+        gap: 18px;
+        padding: 0 28px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255,255,255,0.78);
+      }
+
+      .bottombar {
+        border-top: 1px solid var(--line);
+        border-bottom: 0;
       }
 
       .brand {
-        color: var(--ink);
-        font-weight: 900;
+        font-weight: 800;
+        font-size: 13px;
       }
 
+      .section-title,
+      .counter {
+        font-size: 12px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .counter { justify-self: end; }
+
       .progress {
-        flex: 1;
+        width: min(30vw, 360px);
         height: 2px;
-        background: var(--rule);
-        max-width: 420px;
+        background: var(--line);
       }
 
       .progress span {
         display: block;
-        height: 100%;
         width: 0;
+        height: 100%;
         background: var(--ink);
-        transition: width 240ms ease;
+        transition: width 180ms ease;
       }
 
       .stage {
         min-height: 0;
-        padding: 0 clamp(14px, 3vw, 36px);
+        padding: 22px 28px;
         display: grid;
       }
 
       .slide {
         display: none;
         min-height: 0;
-        align-self: stretch;
-        background: rgba(255, 250, 240, 0.78);
-        border: 1px solid var(--rule);
-        box-shadow: var(--shadow);
-        padding: clamp(22px, 4vw, 54px);
         overflow: hidden;
-        position: relative;
+        background: var(--panel);
+        border: 1px solid var(--line);
       }
 
       .slide.active {
         display: grid;
-        animation: enter 260ms ease both;
       }
 
-      @keyframes enter {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+      .slide-inner {
+        min-height: 0;
+        padding: clamp(26px, 4vw, 54px);
+        display: grid;
+        gap: 24px;
       }
 
       .split {
-        grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.25fr);
-        gap: clamp(22px, 4vw, 54px);
-        align-items: center;
-      }
-
-      .stack {
-        align-content: center;
-        gap: 24px;
+        grid-template-columns: minmax(280px, 0.72fr) minmax(420px, 1.28fr);
+        align-items: stretch;
       }
 
       .top {
         align-content: start;
-        gap: 20px;
       }
 
-      .kicker {
-        margin: 0 0 14px;
-        font-size: 12px;
-        font-weight: 900;
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        color: var(--muted);
+      .center {
+        align-content: center;
       }
 
       h1,
@@ -135,129 +130,175 @@
         margin: 0;
       }
 
-      h1,
-      h2 {
-        font-family: Georgia, "Times New Roman", serif;
-        letter-spacing: 0;
-      }
-
       h1 {
-        max-width: 1040px;
-        font-size: clamp(42px, 7vw, 88px);
-        line-height: 0.9;
+        max-width: 720px;
+        font-size: clamp(40px, 5vw, 68px);
+        line-height: 1.03;
+        font-weight: 760;
       }
 
       h2 {
-        font-size: clamp(34px, 5.6vw, 76px);
-        line-height: 0.94;
+        max-width: 880px;
+        font-size: clamp(32px, 4.5vw, 62px);
+        line-height: 1;
+        font-weight: 800;
       }
 
       h3 {
-        font-size: 14px;
+        font-size: 12px;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.12em;
+      }
+
+      .eyebrow {
+        color: var(--muted);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-weight: 800;
       }
 
       .lead {
-        max-width: 880px;
-        color: #2c2822;
-        font-size: clamp(18px, 2.1vw, 27px);
-        line-height: 1.25;
+        max-width: 760px;
+        font-size: clamp(18px, 2vw, 25px);
+        line-height: 1.28;
+        color: #34383b;
       }
 
       .note {
         color: var(--muted);
         font-size: 14px;
-        line-height: 1.5;
+        line-height: 1.45;
       }
 
-      .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .chip,
-      .link-chip {
-        border: 1px solid var(--rule);
-        background: rgba(255,255,255,0.38);
-        padding: 9px 11px;
-        font-size: 13px;
-        text-decoration: none;
-      }
-
-      .hero-number {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(110px, 20vw, 260px);
-        line-height: 0.78;
-      }
-
-      .metric-grid {
+      .card-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 12px;
       }
 
-      .metric {
-        min-height: 145px;
-        border-top: 5px solid var(--ink);
-        background: var(--panel);
-        padding: 18px;
+      .card-grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tile {
+        min-height: 128px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        background: #fbfcfb;
         display: grid;
         align-content: space-between;
+        gap: 14px;
       }
 
-      .metric strong {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(42px, 5.5vw, 74px);
-        line-height: 0.86;
+      .tile strong {
+        font-size: clamp(34px, 4.8vw, 64px);
+        line-height: 0.9;
+        font-weight: 850;
       }
 
-      .metric span {
+      .tile span,
+      .tile p {
         color: var(--muted);
-        line-height: 1.25;
-      }
-
-      .checklist {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .check-item {
-        background: var(--panel);
-        border: 1px solid var(--rule);
-        padding: 16px;
-        min-height: 112px;
-      }
-
-      .check-item b {
-        display: block;
-        margin-bottom: 8px;
-      }
-
-      .check-item p {
-        color: var(--muted);
+        font-size: 14px;
         line-height: 1.35;
       }
 
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag,
+      .command {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 6px 9px;
+        color: var(--ink);
+        font-size: 12px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .command {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+
+      .matrix-preview {
+        min-height: 0;
+        border: 1px solid var(--line);
+        background: #fbfcfb;
+        display: grid;
+        grid-template-rows: auto 1fr;
+      }
+
+      .matrix-head {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        border-bottom: 1px solid var(--line);
+        background: var(--soft);
+      }
+
+      .matrix-head span,
+      .matrix-row span {
+        padding: 11px 12px;
+        font-size: 12px;
+        border-right: 1px solid var(--line);
+      }
+
+      .matrix-head span {
+        color: var(--muted);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .matrix-list {
+        overflow: hidden;
+      }
+
+      .matrix-row {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        border-bottom: 1px solid var(--line);
+      }
+
+      .matrix-row b {
+        display: block;
+        margin-bottom: 3px;
+      }
+
+      .status {
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .status.green { color: var(--green); }
+      .status.orange { color: var(--orange); }
+      .status.red { color: var(--red); }
+      .status.blue { color: var(--blue); }
+
       .bars {
         display: grid;
-        gap: 13px;
+        gap: 12px;
       }
 
       .bar {
         display: grid;
-        grid-template-columns: 150px 1fr 44px;
-        gap: 12px;
+        grid-template-columns: 150px 1fr 42px;
         align-items: center;
-        font-size: 14px;
+        gap: 12px;
+        font-size: 13px;
       }
 
       .track {
-        height: 20px;
-        border: 1px solid var(--rule);
-        background: rgba(255,255,255,0.36);
+        height: 18px;
+        background: var(--soft);
+        border: 1px solid var(--line);
       }
 
       .fill {
@@ -265,10 +306,10 @@
         background: var(--ink);
       }
 
-      .green { background: var(--green); }
-      .blue { background: var(--blue); }
-      .amber { background: var(--amber); }
-      .red { background: var(--red); }
+      .fill.green { background: var(--green); }
+      .fill.blue { background: var(--blue); }
+      .fill.orange { background: var(--orange); }
+      .fill.red { background: var(--red); }
 
       .workflow {
         display: grid;
@@ -277,49 +318,55 @@
       }
 
       .step {
-        min-height: 190px;
-        background: var(--panel);
-        border: 1px solid var(--rule);
+        min-height: 172px;
         padding: 16px;
+        border: 1px solid var(--line);
+        background: #fbfcfb;
       }
 
-      .step .num {
+      .step-num {
         display: inline-grid;
         place-items: center;
-        width: 32px;
-        height: 32px;
-        margin-bottom: 24px;
+        width: 28px;
+        height: 28px;
+        margin-bottom: 18px;
         background: var(--ink);
-        color: var(--panel);
+        color: #fff;
+        font-size: 12px;
         font-weight: 900;
       }
 
       .step p {
         margin-top: 10px;
         color: var(--muted);
+        font-size: 14px;
         line-height: 1.35;
       }
 
       .verification {
-        display: grid;
-        grid-template-columns: 0.8fr 1.2fr;
-        gap: 18px;
         min-height: 0;
+        display: grid;
+        grid-template-columns: 0.76fr 1.24fr;
+        gap: 14px;
       }
 
       .score {
-        background: var(--ink);
-        color: var(--panel);
         padding: 22px;
+        background: var(--ink);
+        color: white;
         display: grid;
         align-content: center;
-        gap: 18px;
+        gap: 16px;
       }
 
       .score strong {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(80px, 13vw, 168px);
-        line-height: 0.8;
+        font-size: clamp(72px, 11vw, 148px);
+        line-height: 0.82;
+        font-weight: 850;
+      }
+
+      .score .note {
+        color: rgba(255,255,255,0.72);
       }
 
       .checks {
@@ -327,39 +374,28 @@
         overflow: auto;
         display: grid;
         gap: 8px;
-        padding-right: 4px;
       }
 
       .check {
-        background: var(--panel);
-        border: 1px solid var(--rule);
-        padding: 12px;
         display: grid;
-        grid-template-columns: 78px 1fr;
-        gap: 12px;
+        grid-template-columns: 74px 1fr;
+        gap: 10px;
+        padding: 12px;
+        border: 1px solid var(--line);
+        background: #fbfcfb;
       }
-
-      .status {
-        font-size: 12px;
-        font-weight: 900;
-        text-transform: uppercase;
-      }
-
-      .status.hit { color: var(--green); }
-      .status.partial { color: var(--amber); }
-      .status.miss { color: var(--red); }
 
       .toolbar {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 8px;
       }
 
       input,
       select {
-        min-height: 40px;
-        border: 1px solid var(--rule);
-        background: var(--panel);
+        min-height: 38px;
+        border: 1px solid var(--line);
+        background: white;
         padding: 8px 10px;
         color: var(--ink);
         font: inherit;
@@ -368,8 +404,7 @@
       .table-wrap {
         min-height: 0;
         overflow: auto;
-        border: 1px solid var(--rule);
-        background: rgba(255,250,240,0.88);
+        border: 1px solid var(--line);
       }
 
       table {
@@ -382,7 +417,7 @@
       th,
       td {
         padding: 10px;
-        border-bottom: 1px solid var(--rule);
+        border-bottom: 1px solid var(--line);
         text-align: left;
         vertical-align: top;
       }
@@ -391,272 +426,273 @@
         position: sticky;
         top: 0;
         z-index: 2;
-        background: #e8ddca;
+        background: var(--soft);
+        color: var(--muted);
         font-size: 11px;
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
 
-      td small {
-        color: var(--muted);
-      }
+      td small { color: var(--muted); }
 
-      .tag {
+      .mini-tag {
         display: inline-block;
-        padding: 3px 7px;
         margin: 0 4px 4px 0;
-        border: 1px solid var(--rule);
+        padding: 3px 7px;
+        border: 1px solid var(--line);
         white-space: nowrap;
       }
 
-      .tag.easy-win { color: var(--green); border-color: rgba(33,115,75,0.38); }
-      .tag.buildable { color: var(--blue); border-color: rgba(37,95,149,0.38); }
-      .tag.needs-review { color: var(--amber); border-color: rgba(164,106,23,0.38); }
-      .tag.outreach-needed,
-      .tag.not-today { color: var(--red); border-color: rgba(163,59,50,0.38); }
+      .mini-tag.easy-win { color: var(--green); border-color: rgba(24,115,77,0.35); }
+      .mini-tag.buildable { color: var(--blue); border-color: rgba(47,95,143,0.35); }
+      .mini-tag.needs-review { color: var(--orange); border-color: rgba(185,107,22,0.35); }
+      .mini-tag.outreach-needed,
+      .mini-tag.not-today { color: var(--red); border-color: rgba(173,62,52,0.35); }
 
-      .nav {
+      .commands {
         display: flex;
         align-items: center;
+        gap: 8px;
+        overflow: hidden;
+      }
+
+      .dots {
+        justify-self: center;
+        display: flex;
+        gap: 5px;
+      }
+
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: #c8cecb;
+      }
+
+      .dot.active { background: var(--ink); }
+
+      .nav {
+        justify-self: end;
+        display: flex;
         gap: 8px;
       }
 
       button {
+        width: 38px;
+        height: 34px;
         border: 1px solid var(--ink);
         background: var(--ink);
-        color: var(--panel);
-        min-width: 42px;
-        min-height: 38px;
+        color: white;
         cursor: pointer;
         font: inherit;
-        font-weight: 900;
-      }
-
-      .dots {
-        display: flex;
-        gap: 5px;
-        align-items: center;
-      }
-
-      .dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: var(--rule);
-      }
-
-      .dot.active {
-        background: var(--ink);
+        font-weight: 800;
       }
 
       @media (max-width: 900px) {
-        html, body { overflow: auto; }
-        .app { min-height: 100vh; height: auto; }
-        .stage { padding: 0 12px; }
-        .slide {
-          min-height: calc(100vh - 112px);
+        html,
+        body {
           overflow: auto;
-          padding: 22px;
         }
-        .slide.active { display: grid; }
+
+        .shell {
+          min-height: 100vh;
+          height: auto;
+          grid-template-rows: auto 1fr auto;
+        }
+
+        .topbar,
+        .bottombar {
+          grid-template-columns: 1fr auto;
+          padding: 12px;
+        }
+
+        .progress,
+        .commands {
+          display: none;
+        }
+
+        .stage {
+          padding: 12px;
+        }
+
+        .slide {
+          min-height: calc(100vh - 116px);
+          overflow: auto;
+        }
+
+        .slide-inner,
         .split,
-        .metric-grid,
-        .checklist,
+        .card-grid,
+        .card-grid.two,
         .workflow,
         .verification {
           grid-template-columns: 1fr;
         }
-        .hero-number { font-size: 110px; }
+
+        h1 { font-size: clamp(42px, 13vw, 64px); }
+        h2 { font-size: clamp(30px, 10vw, 48px); }
         .bar { grid-template-columns: 112px 1fr 34px; }
-        header, footer { padding: 12px; }
-        .progress { display: none; }
       }
     </style>
   </head>
   <body>
-    <div class="app">
-      <header>
-        <span class="brand">Composio App Research</span>
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">Toolkit Readiness</div>
         <div class="progress" aria-hidden="true"><span id="progress"></span></div>
-        <span id="counter">01 / 08</span>
+        <div class="counter" id="counter">01 / 08</div>
       </header>
 
-      <main class="stage" id="stage">
-        <section class="slide split active" data-title="Thesis">
-          <div>
-            <p class="kicker">AI Product Ops Intern Take-Home</p>
-            <h1>100 apps. One toolkit map.</h1>
-          </div>
-          <div class="stack">
-            <p class="lead">The core finding: most requested apps have enough public API surface to become agent tools, but the shipment risk is usually auth access, admin approval, partner gates, or unsafe write actions.</p>
-            <div class="chips">
-              <span class="chip">100 apps</span>
-              <span class="chip">10 categories</span>
-              <span class="chip">official-doc evidence</span>
-              <span class="chip">agent pipeline</span>
-              <span class="chip">verification sample</span>
+      <main class="stage">
+        <section class="slide active" data-title="Executive Summary">
+          <div class="slide-inner split">
+            <div class="center">
+              <p class="eyebrow">100-App Research</p>
+              <h1>100-app toolkit readiness map.</h1>
+            </div>
+            <div class="center">
+              <p class="lead">Most requested apps have enough public API surface to build useful tools. The main risk is usually not endpoints; it is credential access, approval gates, and safe write boundaries.</p>
+              <div class="tag-row" style="margin-top: 22px">
+                <span class="tag">100 apps</span>
+                <span class="tag">10 categories</span>
+                <span class="tag">official docs</span>
+                <span class="tag">verified sample</span>
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="slide top" data-title="Constraints">
-          <div>
-            <p class="kicker">Requirement Check</p>
-            <h2>The deck is organized around the assignment rubric.</h2>
-          </div>
-          <div class="checklist">
-            <article class="check-item">
-              <b>Findings</b>
-              <p>Every app has category, summary, auth, gatedness, API surface, MCP status, verdict, blocker, confidence, and evidence.</p>
-            </article>
-            <article class="check-item">
-              <b>Patterns</b>
-              <p>The first analytical slides cluster auth, access, buildability, easy wins, and outreach-heavy groups.</p>
-            </article>
-            <article class="check-item">
-              <b>Agent</b>
-              <p>The repo includes a Firecrawl-backed research script and a Browser Use verification trigger.</p>
-            </article>
-            <article class="check-item">
-              <b>Proof</b>
-              <p>Runnable commands are visible in the page and documented in the README.</p>
-            </article>
-            <article class="check-item">
-              <b>Verification</b>
-              <p>The sample shows first-pass accuracy, corrected accuracy, hits, partials, and misses.</p>
-            </article>
-            <article class="check-item">
-              <b>API Calls</b>
-              <p>No paid third-party app accounts are needed. The task asks for research with evidence, not authenticating into all 100 APIs.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="slide stack" data-title="Headline">
-          <div>
-            <p class="kicker">Headline Findings</p>
-            <h2>Easy wins exist, but they are not evenly distributed.</h2>
-          </div>
-          <div class="metric-grid" id="metrics"></div>
-          <p class="note">Self-serve developer platforms, ecommerce, support, and project-management apps are the fastest route. Ads, fintech, enterprise data, and some AI-native products need review or outreach before engineering should invest heavily.</p>
-        </section>
-
-        <section class="slide split" data-title="Patterns">
-          <div>
-            <p class="kicker">Patterns</p>
-            <h2>OAuth dominates customer workflows; keys dominate data utilities.</h2>
-            <p class="lead">The recurring blocker is not “no API.” It is the path from public docs to usable credentials and safe actions.</p>
-          </div>
-          <div class="bars" id="bars"></div>
-        </section>
-
-        <section class="slide top" data-title="Agent">
-          <div>
-            <p class="kicker">Agent + Human Loop</p>
-            <h2>The pipeline makes the work repeatable; humans handle ambiguity.</h2>
-          </div>
-          <div class="workflow">
-            <article class="step">
-              <span class="num">1</span>
-              <h3>Seed</h3>
-              <p>`data/apps.json` fixes the 100-app research set.</p>
-            </article>
-            <article class="step">
-              <span class="num">2</span>
-              <h3>Research</h3>
-              <p>`npm run research` uses Firecrawl to draft structured records from official docs.</p>
-            </article>
-            <article class="step">
-              <span class="num">3</span>
-              <h3>Normalize</h3>
-              <p>Auth, gatedness, API breadth, MCP, verdict, blocker, and evidence are made comparable.</p>
-            </article>
-            <article class="step">
-              <span class="num">4</span>
-              <h3>Verify</h3>
-              <p>`npm run verify:sample` uses Browser Use Cloud for repeatable spot checks.</p>
-            </article>
-            <article class="step">
-              <span class="num">5</span>
-              <h3>Correct</h3>
-              <p>Human review fixes overclaims, gated docs, and product/API ambiguity.</p>
-            </article>
-          </div>
-          <p class="note">Where a product was gated behind payment, partnership, admin approval, or unclear docs, the correct answer is to say so with evidence.</p>
-        </section>
-
-        <section class="slide top" data-title="Verification">
-          <div>
-            <p class="kicker">Verification</p>
-            <h2>The sample improved because misses were shown, not hidden.</h2>
-          </div>
-          <div class="verification">
-            <article class="score" id="score"></article>
-            <div class="checks" id="checks"></div>
-          </div>
-        </section>
-
-        <section class="slide top" data-title="Matrix">
-          <div>
-            <p class="kicker">100-App Matrix</p>
-            <h2>Skimmable table with filters and evidence links.</h2>
-          </div>
-          <div class="toolbar">
-            <input id="search" type="search" placeholder="Search app, category, blocker..." />
-            <select id="buildability"></select>
-            <select id="access"></select>
-            <select id="confidence"></select>
-          </div>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>App</th>
-                  <th>Category</th>
-                  <th>Auth</th>
-                  <th>Access</th>
-                  <th>API Surface</th>
-                  <th>Verdict</th>
-                  <th>Blocker</th>
-                  <th>Evidence</th>
-                </tr>
-              </thead>
-              <tbody id="rows"></tbody>
-            </table>
-          </div>
-        </section>
-
-        <section class="slide split" data-title="Submit">
-          <div>
-            <p class="kicker">Submission</p>
-            <h2>What to submit.</h2>
-            <p class="lead">Live page plus source repo. The code proves the workflow can be rerun; this deck proves the result can be understood quickly.</p>
-          </div>
-          <div class="stack">
-            <div class="checklist">
-              <article class="check-item">
-                <b>Live link</b>
-                <p><a href="https://perfect7613.github.io/composio-app-research-agent/">GitHub Pages deployment</a></p>
-              </article>
-              <article class="check-item">
-                <b>Source repo</b>
-                <p><a href="https://github.com/perfect7613/composio-app-research-agent">github.com/perfect7613/composio-app-research-agent</a></p>
-              </article>
-              <article class="check-item">
-                <b>Research trigger</b>
-                <p>`npm run research:sample` or `npm run research` with `FIRECRAWL_API_KEY`.</p>
-              </article>
-              <article class="check-item">
-                <b>Verification trigger</b>
-                <p>`npm run verify:sample` with `BROWSER_USE_API_KEY` for Browser Use checks.</p>
-              </article>
+        <section class="slide" data-title="Coverage">
+          <div class="slide-inner top">
+            <div>
+              <p class="eyebrow">Coverage</p>
+              <h2>Everything a reviewer needs in two minutes.</h2>
             </div>
-            <p class="note">Candidate skill idea: package this as an “API buildability research” workflow after submission. For this take-home, the stronger move is a clear deck plus runnable scripts.</p>
+            <div class="card-grid two">
+              <article class="tile"><h3>Findings</h3><p>Category, one-line purpose, auth, access, API surface, MCP status, verdict, blocker, confidence, and evidence.</p></article>
+              <article class="tile"><h3>Patterns</h3><p>Auth dominance, self-serve versus gated categories, easy wins, outreach needs, and common blockers.</p></article>
+              <article class="tile"><h3>Agent</h3><p>Firecrawl research pipeline produces structured draft records from official docs.</p></article>
+              <article class="tile"><h3>Verification</h3><p>Browser Use and manual checks sample the dataset, show misses, and document corrections.</p></article>
+            </div>
+            <p class="note">No paid app accounts are required. Gated access is a valid result when the docs or credential path require payment, admin approval, or partnership.</p>
+          </div>
+        </section>
+
+        <section class="slide" data-title="Findings">
+          <div class="slide-inner top">
+            <div>
+              <p class="eyebrow">Headline Findings</p>
+              <h2>Easy wins are real, but access gates shape the roadmap.</h2>
+            </div>
+            <div class="card-grid" id="metrics"></div>
+            <div class="matrix-preview">
+              <div class="matrix-head">
+                <span>App</span><span>Access</span><span>Auth</span><span>Verdict</span><span>Blocker</span>
+              </div>
+              <div class="matrix-list" id="previewRows"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-title="Patterns">
+          <div class="slide-inner split">
+            <div class="center">
+              <p class="eyebrow">Pattern Map</p>
+              <h2>OAuth-heavy apps need consent design. API-key apps ship faster.</h2>
+              <p class="note" style="margin-top: 18px">Ads, fintech, enterprise data, and ambiguous AI-native products cluster around admin review, partner approval, or safety constraints.</p>
+            </div>
+            <div class="bars" id="bars"></div>
+          </div>
+        </section>
+
+        <section class="slide" data-title="Workflow">
+          <div class="slide-inner top">
+            <div>
+              <p class="eyebrow">Research Workflow</p>
+              <h2>Agent first, human judgment where ambiguity matters.</h2>
+            </div>
+            <div class="workflow">
+              <article class="step"><span class="step-num">1</span><h3>Seed</h3><p>Fixed 100-app input list in `data/apps.json`.</p></article>
+              <article class="step"><span class="step-num">2</span><h3>Research</h3><p>Firecrawl drafts structured answers from official docs.</p></article>
+              <article class="step"><span class="step-num">3</span><h3>Normalize</h3><p>Auth, access, API surface, MCP, verdict, blocker, and evidence.</p></article>
+              <article class="step"><span class="step-num">4</span><h3>Verify</h3><p>Browser Use and manual checks sample high-risk rows.</p></article>
+              <article class="step"><span class="step-num">5</span><h3>Correct</h3><p>Misses and partials are recorded instead of hidden.</p></article>
+            </div>
+            <div class="tag-row">
+              <span class="command">npm run research:sample</span>
+              <span class="command">npm run verify:sample</span>
+              <span class="command">npm run build</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-title="Verification">
+          <div class="slide-inner top">
+            <div>
+              <p class="eyebrow">Trust Check</p>
+              <h2>Accuracy improved because the loop caught misses.</h2>
+            </div>
+            <div class="verification">
+              <article class="score" id="score"></article>
+              <div class="checks" id="checks"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-title="Evidence Matrix">
+          <div class="slide-inner top">
+            <div>
+              <p class="eyebrow">Evidence Matrix</p>
+              <h2>All 100 rows remain available for inspection.</h2>
+            </div>
+            <div class="toolbar">
+              <input id="search" type="search" placeholder="Search app, category, blocker..." />
+              <select id="buildability"></select>
+              <select id="access"></select>
+              <select id="confidence"></select>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>App</th>
+                    <th>Category</th>
+                    <th>Auth</th>
+                    <th>Access</th>
+                    <th>API Surface</th>
+                    <th>Verdict</th>
+                    <th>Blocker</th>
+                    <th>Evidence</th>
+                  </tr>
+                </thead>
+                <tbody id="rows"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-title="Submit">
+          <div class="slide-inner split">
+            <div class="center">
+              <p class="eyebrow">Deliverables</p>
+              <h2>Live case study plus runnable source.</h2>
+            </div>
+            <div class="card-grid two center">
+              <article class="tile"><h3>Live Page</h3><p><a href="https://perfect7613.github.io/composio-app-research-agent/">perfect7613.github.io/composio-app-research-agent</a></p></article>
+              <article class="tile"><h3>Source Repo</h3><p><a href="https://github.com/perfect7613/composio-app-research-agent">github.com/perfect7613/composio-app-research-agent</a></p></article>
+              <article class="tile"><h3>Run Research</h3><p>`npm run research:sample` with `FIRECRAWL_API_KEY` for a live pass.</p></article>
+              <article class="tile"><h3>Run Verification</h3><p>`npm run verify:sample` with `BROWSER_USE_API_KEY` for Browser Use checks.</p></article>
+            </div>
           </div>
         </section>
       </main>
 
-      <footer>
+      <footer class="bottombar">
+        <div class="commands">
+          <span class="command">npm run research:sample</span>
+          <span class="command">npm run verify:sample</span>
+          <span class="command">npm run build</span>
+        </div>
         <div class="dots" id="dots" aria-hidden="true"></div>
         <div class="nav">
           <button id="prev" type="button" aria-label="Previous slide">←</button>
@@ -689,18 +725,26 @@
         return total ? Math.round((value / total) * 100) : 0;
       }
 
+      function statusClass(value) {
+        if (value === "easy-win") return "green";
+        if (value === "buildable") return "blue";
+        if (value === "needs-review") return "orange";
+        return "red";
+      }
+
       function renderDeck() {
         slides.forEach((slide, slideIndex) => slide.classList.toggle("active", slideIndex === index));
+        document.querySelector(".section-title")?.remove();
         document.querySelector("#counter").textContent = `${String(index + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
         document.querySelector("#progress").style.width = `${((index + 1) / slides.length) * 100}%`;
         document.querySelector("#dots").innerHTML = slides.map((_, dotIndex) => `<span class="dot ${dotIndex === index ? "active" : ""}"></span>`).join("");
+        slides[index].scrollTop = 0;
+        window.scrollTo({ top: 0, behavior: "auto" });
       }
 
       function go(delta) {
         index = Math.max(0, Math.min(slides.length - 1, index + delta));
         renderDeck();
-        window.scrollTo({ top: 0, behavior: "auto" });
-        slides[index].scrollTop = 0;
       }
 
       document.querySelector("#prev").addEventListener("click", () => go(-1));
@@ -712,26 +756,39 @@
 
       function renderMetrics() {
         const counts = payload.counts;
-        const total = counts.total;
         const easy = counts.buildability["easy-win"] || 0;
-        const buildable = (counts.buildability["easy-win"] || 0) + (counts.buildability.buildable || 0);
+        const buildable = easy + (counts.buildability.buildable || 0);
         const gated = Object.entries(counts.credentialAccess).filter(([key]) => key.includes("gated")).reduce((sum, [, value]) => sum + value, 0);
         const low = counts.confidence.low || 0;
         document.querySelector("#metrics").innerHTML = [
-          [total, "apps researched"],
-          [easy, "low-friction easy wins"],
+          [counts.total, "apps researched"],
+          [easy, "low-friction wins"],
           [buildable, "buildable today with caveats"],
-          [low, "left low-confidence instead of overclaimed"]
-        ].map(([value, label]) => `<article class="metric"><strong>${value}</strong><span>${label}</span></article>`).join("");
+          [gated, "gated by admin, paid, or partner access"]
+        ].map(([value, label]) => `<article class="tile"><strong>${value}</strong><span>${label}</span></article>`).join("");
+      }
+
+      function renderPreviewRows() {
+        const chosen = ["HubSpot", "Slack", "Shopify", "GitHub", "LinkedIn Ads", "Amazon Selling Partner"];
+        const rows = chosen.map((name) => research.find((row) => row.name === name)).filter(Boolean);
+        document.querySelector("#previewRows").innerHTML = rows.map((row) => `
+          <div class="matrix-row">
+            <span><b>${row.name}</b>${row.category}</span>
+            <span>${labels[row.credentialAccess] || row.credentialAccess}</span>
+            <span>${row.authMethods.slice(0, 2).join(", ")}</span>
+            <span class="status ${statusClass(row.buildability)}">${labels[row.buildability] || row.buildability}</span>
+            <span>${row.mainBlocker}</span>
+          </div>
+        `).join("");
       }
 
       function renderBars() {
         const sections = [
           ["Buildability", payload.counts.buildability],
-          ["Credential access", payload.counts.credentialAccess],
-          ["Auth methods", payload.counts.authMethods]
+          ["Credential Access", payload.counts.credentialAccess],
+          ["Auth Methods", payload.counts.authMethods]
         ];
-        const colors = ["green", "blue", "amber", "red"];
+        const colors = ["green", "blue", "orange", "red"];
         document.querySelector("#bars").innerHTML = sections.map(([title, values], sectionIndex) => {
           const max = Math.max(...Object.values(values));
           const rows = Object.entries(values)
@@ -770,10 +827,10 @@
           <tr>
             <td><b>${row.name}</b><br><small>${row.summary}</small></td>
             <td>${row.category}</td>
-            <td>${row.authMethods.map((method) => `<span class="tag">${method}</span>`).join("")}</td>
+            <td>${row.authMethods.map((method) => `<span class="mini-tag">${method}</span>`).join("")}</td>
             <td>${labels[row.credentialAccess] || row.credentialAccess}<br><small>${row.confidence} confidence</small></td>
             <td>${row.apiSurface}</td>
-            <td><span class="tag ${row.buildability}">${labels[row.buildability] || row.buildability}</span></td>
+            <td><span class="mini-tag ${row.buildability}">${labels[row.buildability] || row.buildability}</span></td>
             <td>${row.mainBlocker}</td>
             <td>${row.evidenceUrls.slice(0, 2).map((url, sourceIndex) => `<a href="${url}">source ${sourceIndex + 1}</a>`).join("<br>")}</td>
           </tr>
@@ -784,7 +841,7 @@
         const before = verification.firstPass;
         const after = verification.afterVerification;
         document.querySelector("#score").innerHTML = `
-          <p class="kicker">Corrected sample accuracy</p>
+          <h3>Corrected Accuracy</h3>
           <strong>${Math.round(after.accuracy * 100)}%</strong>
           <p>First pass: ${before.correct}/${before.sampleSize} correct, ${before.partial} partial, ${before.wrong} wrong.</p>
           <p>After verification: ${after.correct}/${after.sampleSize} correct, ${after.partial} partial, ${after.wrong} wrong.</p>
@@ -792,7 +849,7 @@
         `;
         document.querySelector("#checks").innerHTML = verification.checks.map((check) => `
           <article class="check">
-            <span class="status ${check.result}">${check.result}</span>
+            <span class="status ${check.result === "hit" ? "green" : check.result === "partial" ? "orange" : "red"}">${check.result}</span>
             <div>
               <b>${check.app}</b>
               <p>${check.claim}</p>
@@ -808,6 +865,7 @@
       populateSelect("#confidence", "confidence", "All confidence");
       document.querySelectorAll("#search, #buildability, #access, #confidence").forEach((control) => control.addEventListener("input", renderRows));
       renderMetrics();
+      renderPreviewRows();
       renderBars();
       renderRows();
       renderVerification();
