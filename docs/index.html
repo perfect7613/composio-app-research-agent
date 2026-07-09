@@ -343,10 +343,10 @@
         line-height: 1.35;
       }
 
-      .verification {
+      .trust-layout {
         min-height: 0;
         display: grid;
-        grid-template-columns: 0.76fr 1.24fr;
+        grid-template-columns: 0.82fr 1.18fr;
         gap: 14px;
       }
 
@@ -356,11 +356,11 @@
         color: white;
         display: grid;
         align-content: center;
-        gap: 16px;
+        gap: 14px;
       }
 
       .score strong {
-        font-size: clamp(72px, 11vw, 148px);
+        font-size: clamp(66px, 10vw, 126px);
         line-height: 0.82;
         font-weight: 850;
       }
@@ -369,20 +369,65 @@
         color: rgba(255,255,255,0.72);
       }
 
-      .checks {
+      .trust-main {
         min-height: 0;
-        overflow: auto;
         display: grid;
-        gap: 8px;
+        grid-template-rows: auto auto 1fr;
+        gap: 12px;
       }
 
-      .check {
+      .trust-flow {
         display: grid;
-        grid-template-columns: 74px 1fr;
-        gap: 10px;
-        padding: 12px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         border: 1px solid var(--line);
         background: #fbfcfb;
+      }
+
+      .flow-step {
+        min-height: 104px;
+        padding: 14px;
+        border-right: 1px solid var(--line);
+      }
+
+      .flow-step:last-child {
+        border-right: 0;
+      }
+
+      .flow-step b {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .flow-step p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .example-grid {
+        min-height: 0;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .result-card {
+        border: 1px solid var(--line);
+        background: #fbfcfb;
+        padding: 14px;
+        display: grid;
+        align-content: start;
+        gap: 10px;
+      }
+
+      .result-card p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .result-card a {
+        font-size: 13px;
       }
 
       .toolbar {
@@ -525,7 +570,9 @@
         .card-grid,
         .card-grid.two,
         .workflow,
-        .verification {
+        .trust-layout,
+        .trust-flow,
+        .example-grid {
           grid-template-columns: 1fr;
         }
 
@@ -630,11 +677,20 @@
           <div class="slide-inner top">
             <div>
               <p class="eyebrow">Trust Check</p>
-              <h2>Accuracy improved because the loop caught misses.</h2>
+              <h2>Each row is a claim. Verification asks if the docs prove it.</h2>
             </div>
-            <div class="verification">
+            <div class="trust-layout">
               <article class="score" id="score"></article>
-              <div class="checks" id="checks"></div>
+              <div class="trust-main">
+                <p class="lead">The agent drafts a claim like “this app uses OAuth and is self-serve.” The verifier opens the evidence, checks the exact docs, and either confirms it, softens it, or rewrites it.</p>
+                <div class="trust-flow">
+                  <article class="flow-step"><b>1. Claim</b><p>Auth, access, API surface, MCP status, and buildability verdict.</p></article>
+                  <article class="flow-step"><b>2. Evidence</b><p>Official docs or developer portal link behind the claim.</p></article>
+                  <article class="flow-step"><b>3. Check</b><p>Browser/manual review labels it hit, partial, or miss.</p></article>
+                  <article class="flow-step"><b>4. Correction</b><p>Wrong or overconfident rows are downgraded with notes.</p></article>
+                </div>
+                <div class="example-grid" id="checks"></div>
+              </div>
             </div>
           </div>
         </section>
@@ -706,7 +762,8 @@
       const research = payload.research;
       const verification = payload.verification;
       const slides = [...document.querySelectorAll(".slide")];
-      let index = 0;
+      const requestedSlide = Number(new URLSearchParams(window.location.search).get("slide") || 1);
+      let index = Math.max(0, Math.min(slides.length - 1, requestedSlide - 1));
 
       const labels = {
         "easy-win": "Easy wins",
@@ -844,18 +901,16 @@
           <h3>Corrected Accuracy</h3>
           <strong>${Math.round(after.accuracy * 100)}%</strong>
           <p>First pass: ${before.correct}/${before.sampleSize} correct, ${before.partial} partial, ${before.wrong} wrong.</p>
-          <p>After verification: ${after.correct}/${after.sampleSize} correct, ${after.partial} partial, ${after.wrong} wrong.</p>
-          <p class="note">${verification.method}</p>
+          <p>After correction: ${after.correct}/${after.sampleSize} correct, ${after.partial} partial, ${after.wrong} wrong.</p>
+          <p class="note">Sampled across categories, auth types, gatedness, and low-confidence rows.</p>
         `;
-        document.querySelector("#checks").innerHTML = verification.checks.map((check) => `
-          <article class="check">
+        const examples = ["Slack", "Pumble", "NotebookLM"].map((name) => verification.checks.find((check) => check.app === name)).filter(Boolean);
+        document.querySelector("#checks").innerHTML = examples.map((check) => `
+          <article class="result-card">
             <span class="status ${check.result === "hit" ? "green" : check.result === "partial" ? "orange" : "red"}">${check.result}</span>
-            <div>
-              <b>${check.app}</b>
-              <p>${check.claim}</p>
-              <p class="note">${check.whatChanged}</p>
-              <a href="${check.evidenceUrl}">evidence</a>
-            </div>
+            <b>${check.app}</b>
+            <p>${check.whatChanged}</p>
+            <a href="${check.evidenceUrl}">view evidence</a>
           </article>
         `).join("");
       }
