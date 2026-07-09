@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "required": [
+    "name",
+    "category",
+    "summary",
+    "authMethods",
+    "credentialAccess",
+    "apiSurface",
+    "mcpStatus",
+    "buildability",
+    "mainBlocker",
+    "confidence",
+    "evidenceUrls"
+  ],
+  "properties": {
+    "name": { "type": "string" },
+    "category": { "type": "string" },
+    "summary": { "type": "string" },
+    "authMethods": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "credentialAccess": {
+      "type": "string",
+      "enum": ["self-serve", "admin-gated", "paid-or-trial-gated", "partner-gated", "unclear"]
+    },
+    "apiSurface": { "type": "string" },
+    "mcpStatus": { "type": "string" },
+    "buildability": {
+      "type": "string",
+      "enum": ["easy-win", "buildable", "needs-review", "outreach-needed", "not-today"]
+    },
+    "mainBlocker": { "type": "string" },
+    "confidence": {
+      "type": "string",
+      "enum": ["high", "medium", "low"]
+    },
+    "evidenceUrls": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "notes": { "type": "string" }
+  }
+}

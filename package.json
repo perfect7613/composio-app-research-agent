@@ -1,0 +1,29 @@
+{
+  "name": "composio-app-research-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agentic research pipeline and case-study report for API/toolkit buildability across 100 apps.",
+  "type": "module",
+  "scripts": {
+    "seed": "node scripts/seed-apps.mjs",
+    "bootstrap": "node scripts/bootstrap-curated-research.mjs",
+    "research:sample": "node scripts/research-agent.mjs --limit 5",
+    "research": "node scripts/research-agent.mjs",
+    "verify:sample": "node scripts/verify-browser-use.mjs --sample-size 8",
+    "build": "node scripts/build-data-bundle.mjs",
+    "preview": "python3 -m http.server 4173 --directory docs"
+  },
+  "keywords": [
+    "composio",
+    "api-research",
+    "agent",
+    "firecrawl",
+    "browser-use",
+    "mcp"
+  ],
+  "dependencies": {
+    "browser-use-sdk": "latest",
+    "zod": "^4.0.0"
+  },
+  "license": "MIT"
+}

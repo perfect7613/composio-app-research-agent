@@ -1,0 +1,131 @@
+{
+  "method": "Stratified sample across categories, auth types, credential-access patterns, and low-confidence rows. Manual checks used official docs; Browser Use trigger is provided for repeatable browser verification.",
+  "firstPass": {
+    "sampleSize": 16,
+    "correct": 11,
+    "partial": 3,
+    "wrong": 2,
+    "accuracy": 0.69
+  },
+  "afterVerification": {
+    "sampleSize": 16,
+    "correct": 14,
+    "partial": 2,
+    "wrong": 0,
+    "accuracy": 0.88
+  },
+  "checks": [
+    {
+      "app": "HubSpot",
+      "claim": "Self-serve CRM API with OAuth/private app token and broad CRM surface.",
+      "result": "hit",
+      "whatChanged": "Updated evidence to latest date-versioned API reference.",
+      "evidenceUrl": "https://developers.hubspot.com/docs/api-reference/latest/overview"
+    },
+    {
+      "app": "Slack",
+      "claim": "OAuth2, bot/user tokens, broad app platform.",
+      "result": "hit",
+      "whatChanged": "Kept classification as easy-win, with scope/app-install caveat.",
+      "evidenceUrl": "https://docs.slack.dev/authentication/"
+    },
+    {
+      "app": "LinkedIn Ads",
+      "claim": "Marketing API is gated by program/access tiers and ad account roles.",
+      "result": "hit",
+      "whatChanged": "Changed blocker wording from generic app review to Development Tier/Marketing API Program access.",
+      "evidenceUrl": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started"
+    },
+    {
+      "app": "Amazon Selling Partner",
+      "claim": "SP-API is buildable but developer registration/approval and AWS signing are blockers.",
+      "result": "hit",
+      "whatChanged": "Kept outreach-needed because access requires seller/developer registration.",
+      "evidenceUrl": "https://developer-docs.amazon.com/sp-api/docs/sp-api-registration-overview"
+    },
+    {
+      "app": "Firecrawl",
+      "claim": "Official MCP integration exists.",
+      "result": "hit",
+      "whatChanged": "Marked MCP status as official.",
+      "evidenceUrl": "https://docs.firecrawl.dev/mcp-server"
+    },
+    {
+      "app": "GitHub",
+      "claim": "Official GitHub MCP Server exists.",
+      "result": "hit",
+      "whatChanged": "Marked as an easy-win with existing MCP proof.",
+      "evidenceUrl": "https://github.com/github/github-mcp-server"
+    },
+    {
+      "app": "Plain",
+      "claim": "GraphQL support platform API with API-key authentication.",
+      "result": "hit",
+      "whatChanged": "Kept as easy-win but noted GraphQL schema mapping.",
+      "evidenceUrl": "https://www.plain.com/docs/api-reference/introduction"
+    },
+    {
+      "app": "Shopify",
+      "claim": "Self-serve OAuth app platform with broad Admin APIs.",
+      "result": "hit",
+      "whatChanged": "No change beyond emphasizing app scopes.",
+      "evidenceUrl": "https://shopify.dev/docs/apps/build/authentication-authorization"
+    },
+    {
+      "app": "Snowflake",
+      "claim": "Buildable but enterprise/admin-gated because auth and warehouse permissions matter.",
+      "result": "hit",
+      "whatChanged": "Kept buildable, not easy-win.",
+      "evidenceUrl": "https://docs.snowflake.com/en/developer-guide/sql-api/index"
+    },
+    {
+      "app": "Monday.com",
+      "claim": "Self-serve GraphQL API for boards/items/workflows.",
+      "result": "hit",
+      "whatChanged": "Kept GraphQL-specific toolkit caveat.",
+      "evidenceUrl": "https://developer.monday.com/api-reference/docs"
+    },
+    {
+      "app": "Pumble",
+      "claim": "API availability and breadth are unclear.",
+      "result": "partial",
+      "whatChanged": "Left low confidence rather than over-claiming Slack-like API breadth.",
+      "evidenceUrl": "https://pumble.com/help/integrations/api/"
+    },
+    {
+      "app": "systeme.io",
+      "claim": "API is likely available but surface and credential path are unclear.",
+      "result": "partial",
+      "whatChanged": "Downgraded from buildable to needs-review.",
+      "evidenceUrl": "https://developer.systeme.io/"
+    },
+    {
+      "app": "Paygent Connect",
+      "claim": "Payment API with key/token auth.",
+      "result": "miss",
+      "whatChanged": "Changed to partner-gated/low confidence because public docs were insufficient.",
+      "evidenceUrl": "https://www.paygent.com/"
+    },
+    {
+      "app": "NotebookLM",
+      "claim": "Buildable through Gemini Enterprise API.",
+      "result": "miss",
+      "whatChanged": "Separated NotebookLM product from Gemini/Vertex AI APIs; marked needs-review.",
+      "evidenceUrl": "https://cloud.google.com/vertex-ai/generative-ai/docs"
+    },
+    {
+      "app": "Otter AI",
+      "claim": "MCP/API exists for meeting notes.",
+      "result": "partial",
+      "whatChanged": "Kept low confidence until account-level docs can be verified.",
+      "evidenceUrl": "https://help.otter.ai/"
+    },
+    {
+      "app": "Mermaid CLI",
+      "claim": "Local command wrapper is an easy agent tool despite no SaaS auth.",
+      "result": "hit",
+      "whatChanged": "Kept as local-tool easy-win, not API toolkit.",
+      "evidenceUrl": "https://github.com/mermaid-js/mermaid-cli"
+    }
+  ]
+}
