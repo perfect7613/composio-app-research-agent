@@ -1,0 +1,361 @@
+{
+  "generatedAt": "2026-07-09T17:31:35.471Z",
+  "sampleSize": 16,
+  "selectionLogic": "Stratified across confidence, gatedness, buildability, MCP status, API style, and category coverage.",
+  "sample": [
+    {
+      "app": "Pumble",
+      "category": "Communications and Messaging",
+      "reason": [
+        "low-confidence"
+      ],
+      "claim": {
+        "authMethods": [
+          "API token"
+        ],
+        "credentialAccess": "unclear",
+        "apiSurface": "Public API documentation appears limited compared with Slack-style platforms.",
+        "mcpStatus": "No official Pumble MCP found in baseline.",
+        "buildability": "needs-review",
+        "mainBlocker": "API breadth and credential access need confirmation."
+      },
+      "evidenceUrls": [
+        "https://pumble.com/help/integrations/api/"
+      ]
+    },
+    {
+      "app": "LinkedIn Ads",
+      "category": "Marketing, Ads, Email and Social",
+      "reason": [
+        "partner-gated"
+      ],
+      "claim": {
+        "authMethods": [
+          "OAuth2"
+        ],
+        "credentialAccess": "partner-gated",
+        "apiSurface": "Marketing APIs for ad accounts, campaigns, creatives, audiences, and analytics.",
+        "mcpStatus": "No official LinkedIn Ads MCP found in baseline.",
+        "buildability": "outreach-needed",
+        "mainBlocker": "LinkedIn Marketing API access is gated by product/app approval."
+      },
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/linkedin/marketing/",
+        "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow"
+      ]
+    },
+    {
+      "app": "Salesforce",
+      "category": "CRM and Sales",
+      "reason": [
+        "admin-gated"
+      ],
+      "claim": {
+        "authMethods": [
+          "OAuth2",
+          "JWT bearer",
+          "session token"
+        ],
+        "credentialAccess": "admin-gated",
+        "apiSurface": "Broad REST, SOAP, Bulk, Metadata, Streaming, and GraphQL surfaces.",
+        "mcpStatus": "No official Salesforce MCP found in baseline.",
+        "buildability": "buildable",
+        "mainBlocker": "Connected app setup and admin permissions."
+      },
+      "evidenceUrls": [
+        "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm",
+        "https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm"
+      ]
+    },
+    {
+      "app": "Copper",
+      "category": "CRM and Sales",
+      "reason": [
+        "paid-gated"
+      ],
+      "claim": {
+        "authMethods": [
+          "API key",
+          "user email"
+        ],
+        "credentialAccess": "paid-or-trial-gated",
+        "apiSurface": "REST API for people, companies, opportunities, projects, tasks, and webhooks.",
+        "mcpStatus": "No official Copper MCP found in baseline.",
+        "buildability": "buildable",
+        "mainBlocker": "Requires Copper account and API key from user/admin."
+      },
+      "evidenceUrls": [
+        "https://developer.copper.com/",
+        "https://developer.copper.com/introduction/authentication.html"
+      ]
+    },
+    {
+      "app": "HubSpot",
+      "category": "CRM and Sales",
+      "reason": [
+        "easy-win"
+      ],
+      "claim": {
+        "authMethods": [
+          "OAuth2",
+          "private app token"
+        ],
+        "credentialAccess": "self-serve",
+        "apiSurface": "Broad public CRM, marketing, files, events, and automation REST APIs.",
+        "mcpStatus": "No official HubSpot MCP found in baseline.",
+        "buildability": "easy-win",
+        "mainBlocker": "OAuth scopes and account object variation."
+      },
+      "evidenceUrls": [
+        "https://developers.hubspot.com/docs/api/overview",
+        "https://developers.hubspot.com/docs/apps/authentication/oauth-quickstart-guide"
+      ]
+    },
+    {
+      "app": "DealCloud",
+      "category": "CRM and Sales",
+      "reason": [
+        "outreach"
+      ],
+      "claim": {
+        "authMethods": [
+          "OAuth2",
+          "token"
+        ],
+        "credentialAccess": "paid-or-trial-gated",
+        "apiSurface": "Documented REST API for DealCloud customers.",
+        "mcpStatus": "No official DealCloud MCP found in baseline.",
+        "buildability": "outreach-needed",
+        "mainBlocker": "Customer/admin access and domain-specific schema."
+      },
+      "evidenceUrls": [
+        "https://api.docs.dealcloud.com/"
+      ]
+    },
+    {
+      "app": "Pipedrive",
+      "category": "CRM and Sales",
+      "reason": [
+        "official-mcp"
+      ],
+      "claim": {
+        "authMethods": [
+          "OAuth2",
+          "API token"
+        ],
+        "credentialAccess": "self-serve",
+        "apiSurface": "Broad REST API for deals, persons, orgs, activities, files, and webhooks.",
+        "mcpStatus": "No official Pipedrive MCP found in baseline.",
+        "buildability": "easy-win",
+        "mainBlocker": "Per-account API token handling and rate limits."
+      },
+      "evidenceUrls": [
+        "https://developers.pipedrive.com/docs/api/v1",
+        "https://pipedrive.readme.io/docs/core-api-concepts-authentication"
+      ]
+    },
+    {
+      "app": "Twenty",
+      "category": "CRM and Sales",
+      "reason": [
+        "graphql"
+      ],
+      "claim": {
+        "authMethods": [
+          "API key",
+          "OAuth2"
+        ],
+        "credentialAccess": "self-serve",
+        "apiSurface": "Open-source API surface with REST and GraphQL-oriented platform docs.",
+        "mcpStatus": "No official Twenty MCP found in baseline.",
+        "buildability": "easy-win",
+        "mainBlocker": "Version drift between cloud and self-hosted deployments."
+      },
+      "evidenceUrls": [
+        "https://twenty.com/developers",
+        "https://github.com/twentyhq/twenty"
+      ]
+    },
+    {
+      "app": "Attio",
+      "category": "CRM and Sales",
+      "reason": [
+        "category-coverage"
+      ],
+      "claim": {
+        "authMethods": [
+          "OAuth2",
+          "access token"
+        ],
+        "credentialAccess": "self-serve",
+        "apiSurface": "Public REST API for objects, records, lists, comments, notes, tasks, and webhooks.",
+        "mcpStatus": "No official Attio MCP found in baseline.",
+        "buildability": "easy-win",
+        "mainBlocker": "Object model mapping and scope design."
+      },
+      "evidenceUrls": [
+        "https://docs.attio.com/rest-api/endpoint-reference/overview",
+        "https://docs.attio.com/docs/authentication"
+      ]
+    },
+    {
+      "app": "Zendesk",
+      "category": "Support and Helpdesk",
+      "reason": [
+        "category-coverage"
+      ],
+      "claim": {
+        "authMethods": [
+          "OAuth2",
+          "API token",
+          "Basic"
+        ],
+        "credentialAccess": "admin-gated",
+        "apiSurface": "Broad REST APIs for support, help center, chat, users, and webhooks.",
+        "mcpStatus": "No official Zendesk MCP found in baseline.",
+        "buildability": "buildable",
+        "mainBlocker": "Admin token setup and product-specific APIs."
+      },
+      "evidenceUrls": [
+        "https://developer.zendesk.com/api-reference/",
+        "https://developer.zendesk.com/documentation/api-basics/authentication/"
+      ]
+    },
+    {
+      "app": "Slack",
+      "category": "Communications and Messaging",
+      "reason": [
+        "category-coverage"
+      ],
+      "claim": {
+        "authMethods": [
+          "OAuth2",
+          "bot token",
+          "user token"
+        ],
+        "credentialAccess": "self-serve",
+        "apiSurface": "Very broad Web API, Events API, Socket Mode, workflows, and app surfaces.",
+        "mcpStatus": "Official and community Slack MCP servers exist.",
+        "buildability": "easy-win",
+        "mainBlocker": "OAuth review, workspace install, and granular scopes."
+      },
+      "evidenceUrls": [
+        "https://api.slack.com/apis",
+        "https://api.slack.com/authentication"
+      ]
+    },
+    {
+      "app": "Google Ads",
+      "category": "Marketing, Ads, Email and Social",
+      "reason": [
+        "category-coverage"
+      ],
+      "claim": {
+        "authMethods": [
+          "OAuth2",
+          "developer token"
+        ],
+        "credentialAccess": "admin-gated",
+        "apiSurface": "Large gRPC/REST API for accounts, campaigns, ads, assets, reports, and conversions.",
+        "mcpStatus": "No official Google Ads MCP found in baseline.",
+        "buildability": "buildable",
+        "mainBlocker": "Developer token approval and OAuth consent."
+      },
+      "evidenceUrls": [
+        "https://developers.google.com/google-ads/api/docs/start",
+        "https://developers.google.com/google-ads/api/docs/oauth/overview"
+      ]
+    },
+    {
+      "app": "Shopify",
+      "category": "Ecommerce",
+      "reason": [
+        "category-coverage"
+      ],
+      "claim": {
+        "authMethods": [
+          "OAuth2",
+          "access token"
+        ],
+        "credentialAccess": "self-serve",
+        "apiSurface": "Very broad Admin GraphQL/REST, Storefront, webhooks, checkout, and app APIs.",
+        "mcpStatus": "No official Shopify MCP found in baseline.",
+        "buildability": "easy-win",
+        "mainBlocker": "App install, scopes, and store/admin permissions."
+      },
+      "evidenceUrls": [
+        "https://shopify.dev/docs/api",
+        "https://shopify.dev/docs/apps/build/authentication-authorization"
+      ]
+    },
+    {
+      "app": "DataForSEO",
+      "category": "Data, SEO and Scraping",
+      "reason": [
+        "category-coverage"
+      ],
+      "claim": {
+        "authMethods": [
+          "Basic",
+          "API login/password"
+        ],
+        "credentialAccess": "self-serve",
+        "apiSurface": "Broad REST APIs for SERP, keywords, backlinks, domain analytics, merchant, and on-page data.",
+        "mcpStatus": "No official DataForSEO MCP found in baseline.",
+        "buildability": "easy-win",
+        "mainBlocker": "Credit pricing and many endpoint families."
+      },
+      "evidenceUrls": [
+        "https://docs.dataforseo.com/v3/",
+        "https://docs.dataforseo.com/v3/appendix-user-data/"
+      ]
+    },
+    {
+      "app": "GitHub",
+      "category": "Developer, Infra and Data platforms",
+      "reason": [
+        "category-coverage"
+      ],
+      "claim": {
+        "authMethods": [
+          "OAuth2",
+          "GitHub App",
+          "fine-grained token",
+          "PAT"
+        ],
+        "credentialAccess": "self-serve",
+        "apiSurface": "Very broad REST and GraphQL APIs across repos, issues, PRs, actions, orgs, users, and security.",
+        "mcpStatus": "Official GitHub MCP Server exists.",
+        "buildability": "easy-win",
+        "mainBlocker": "Permission model and org install review."
+      },
+      "evidenceUrls": [
+        "https://docs.github.com/en/rest",
+        "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps",
+        "https://github.com/github/github-mcp-server"
+      ]
+    },
+    {
+      "app": "Notion",
+      "category": "Productivity and Project Management",
+      "reason": [
+        "category-coverage"
+      ],
+      "claim": {
+        "authMethods": [
+          "OAuth2",
+          "internal integration token"
+        ],
+        "credentialAccess": "self-serve",
+        "apiSurface": "Public REST API for pages, databases, blocks, comments, users, and search.",
+        "mcpStatus": "No official Notion MCP found in baseline.",
+        "buildability": "easy-win",
+        "mainBlocker": "Workspace install and database schema variation."
+      },
+      "evidenceUrls": [
+        "https://developers.notion.com/reference/intro",
+        "https://developers.notion.com/docs/authorization"
+      ]
+    }
+  ]
+}

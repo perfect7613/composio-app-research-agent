@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-07-09T17:35:18.210Z",
+  "pipeline": [
+    {
+      "stage": "seed",
+      "command": "npm run seed",
+      "output": "data/apps.json",
+      "result": "100 apps fixed from the research set."
+    },
+    {
+      "stage": "agent-research",
+      "command": "npm run research",
+      "output": "data/research-draft.json + .firecrawl/agent/",
+      "result": "Firecrawl-backed agent drafts structured rows when FIRECRAWL_API_KEY is available; curated final rows are stored in data/research.json."
+    },
+    {
+      "stage": "evidence-audit",
+      "command": "npm run evidence:audit",
+      "output": "data/evidence-audit.json",
+      "result": "162/179 evidence URLs reachable or gated-but-valid."
+    },
+    {
+      "stage": "sample",
+      "command": "npm run sample:verify",
+      "output": "data/verification-sample.json",
+      "result": "16 rows selected across risk and category strata."
+    },
+    {
+      "stage": "browser-verification",
+      "command": "npm run verify:sample",
+      "output": "data/verification-browser-use.json or data/verification.json",
+      "result": "11/16 correct first pass; 14/16 correct after correction."
+    },
+    {
+      "stage": "publish",
+      "command": "npm run build",
+      "output": "docs/assets/research-data.js",
+      "result": "Static data bundle generated for the HTML deck."
+    }
+  ],
+  "datasetSummary": {
+    "apps": 100,
+    "easyWins": 52,
+    "gated": 27,
+    "lowConfidence": 12,
+    "verificationChecks": 16
+  },
+  "correctionExamples": [
+    {
+      "app": "Pumble",
+      "result": "partial",
+      "correction": "Left low confidence rather than over-claiming Slack-like API breadth.",
+      "evidenceUrl": "https://pumble.com/help/integrations/api/"
+    },
+    {
+      "app": "systeme.io",
+      "result": "partial",
+      "correction": "Downgraded from buildable to needs-review.",
+      "evidenceUrl": "https://developer.systeme.io/"
+    },
+    {
+      "app": "Paygent Connect",
+      "result": "miss",
+      "correction": "Changed to partner-gated/low confidence because public docs were insufficient.",
+      "evidenceUrl": "https://www.paygent.com/"
+    },
+    {
+      "app": "NotebookLM",
+      "result": "miss",
+      "correction": "Separated NotebookLM product from Gemini/Vertex AI APIs; marked needs-review.",
+      "evidenceUrl": "https://cloud.google.com/vertex-ai/generative-ai/docs"
+    },
+    {
+      "app": "Otter AI",
+      "result": "partial",
+      "correction": "Kept low confidence until account-level docs can be verified.",
+      "evidenceUrl": "https://help.otter.ai/"
+    }
+  ]
+}

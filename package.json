@@ -9,7 +9,11 @@
     "bootstrap": "node scripts/bootstrap-curated-research.mjs",
     "research:sample": "node scripts/research-agent.mjs --limit 5",
     "research": "node scripts/research-agent.mjs",
+    "evidence:audit": "node scripts/evidence-audit.mjs",
+    "sample:verify": "node scripts/verification-sample.mjs --size 16",
     "verify:sample": "node scripts/verify-browser-use.mjs --sample-size 8",
+    "agent:report": "node scripts/build-agent-run-report.mjs",
+    "pipeline": "npm run seed && npm run research:sample && npm run evidence:audit && npm run sample:verify && npm run verify:sample && npm run agent:report && npm run build",
     "build": "node scripts/build-data-bundle.mjs",
     "preview": "python3 -m http.server 4173 --directory docs"
   },

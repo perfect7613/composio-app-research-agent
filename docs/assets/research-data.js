@@ -2411,6 +2411,2641 @@ window.RESEARCH_CASE_STUDY = {
       }
     ]
   },
+  "evidenceAudit": {
+    "summary": {
+      "checkedAt": "2026-07-09T17:33:48.678Z",
+      "appsChecked": 100,
+      "totalEvidenceUrls": 179,
+      "reachableEvidenceUrls": 162,
+      "appsWithReachableEvidence": 95,
+      "appsWithAllEvidenceReachable": 87,
+      "appsNeedingEvidenceReview": [
+        "Attio",
+        "LiveAgent",
+        "Plain",
+        "MrScraper",
+        "Bright Data"
+      ]
+    },
+    "rows": [
+      {
+        "id": 1,
+        "app": "Salesforce",
+        "category": "CRM and Sales",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm",
+            "status": 403,
+            "ok": true,
+            "latencyMs": 252
+          },
+          {
+            "url": "https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 952
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "app": "HubSpot",
+        "category": "CRM and Sales",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.hubspot.com/docs/api/overview",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 5538
+          },
+          {
+            "url": "https://developers.hubspot.com/docs/apps/authentication/oauth-quickstart-guide",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1135
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "app": "Pipedrive",
+        "category": "CRM and Sales",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.pipedrive.com/docs/api/v1",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 912
+          },
+          {
+            "url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 312
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "app": "Attio",
+        "category": "CRM and Sales",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 0,
+        "allEvidenceReachable": false,
+        "checks": [
+          {
+            "url": "https://docs.attio.com/rest-api/endpoint-reference/overview",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 2552
+          },
+          {
+            "url": "https://docs.attio.com/docs/authentication",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 2439
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "app": "Twenty",
+        "category": "CRM and Sales",
+        "confidence": "medium",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://twenty.com/developers",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 536
+          },
+          {
+            "url": "https://github.com/twentyhq/twenty",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 827
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "app": "Podio",
+        "category": "CRM and Sales",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.podio.com/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 587
+          },
+          {
+            "url": "https://developers.podio.com/authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 172
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "app": "Zoho CRM",
+        "category": "CRM and Sales",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://www.zoho.com/crm/developer/docs/api/v7/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 116
+          },
+          {
+            "url": "https://www.zoho.com/crm/developer/docs/api/v7/oauth-overview.html",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 20
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "app": "Close",
+        "category": "CRM and Sales",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.close.com/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 148
+          },
+          {
+            "url": "https://developer.close.com/topics/authentication/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 449
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "app": "Copper",
+        "category": "CRM and Sales",
+        "confidence": "medium",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.copper.com/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 964
+          },
+          {
+            "url": "https://developer.copper.com/introduction/authentication.html",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 614
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "app": "DealCloud",
+        "category": "CRM and Sales",
+        "confidence": "medium",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://api.docs.dealcloud.com/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 910
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "app": "Zendesk",
+        "category": "Support and Helpdesk",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.zendesk.com/api-reference/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 798
+          },
+          {
+            "url": "https://developer.zendesk.com/documentation/api-basics/authentication/",
+            "status": 403,
+            "ok": true,
+            "latencyMs": 750
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "app": "Intercom",
+        "category": "Support and Helpdesk",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": false,
+        "checks": [
+          {
+            "url": "https://developers.intercom.com/docs/references/rest-api",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 1689
+          },
+          {
+            "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 159
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "app": "Freshdesk",
+        "category": "Support and Helpdesk",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.freshdesk.com/api/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 549
+          },
+          {
+            "url": "https://developers.freshdesk.com/api/#authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 12
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "app": "Front",
+        "category": "Support and Helpdesk",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://dev.frontapp.com/reference/introduction",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 945
+          },
+          {
+            "url": "https://dev.frontapp.com/docs/authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 845
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "app": "Pylon",
+        "category": "Support and Helpdesk",
+        "confidence": "medium",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.usepylon.com/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 241
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "app": "LiveAgent",
+        "category": "Support and Helpdesk",
+        "confidence": "medium",
+        "evidenceCount": 2,
+        "reachableEvidence": 0,
+        "allEvidenceReachable": false,
+        "checks": [
+          {
+            "url": "https://support.liveagent.com/963150-API-v3",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 1833
+          },
+          {
+            "url": "https://support.liveagent.com/062702-API",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 1384
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "app": "Plain",
+        "category": "Support and Helpdesk",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 0,
+        "allEvidenceReachable": false,
+        "checks": [
+          {
+            "url": "https://www.plain.com/docs/api-reference/introduction",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 2687
+          },
+          {
+            "url": "https://www.plain.com/docs/api-reference/authentication",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 1555
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "app": "Help Scout",
+        "category": "Support and Helpdesk",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.helpscout.com/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 190
+          },
+          {
+            "url": "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 8
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "app": "Gorgias",
+        "category": "Support and Helpdesk",
+        "confidence": "medium",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.gorgias.com/reference/introduction",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 295
+          },
+          {
+            "url": "https://developers.gorgias.com/reference/authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 233
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "app": "Gladly",
+        "category": "Support and Helpdesk",
+        "confidence": "medium",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.gladly.com/rest/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 349
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "app": "Slack",
+        "category": "Communications and Messaging",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://api.slack.com/apis",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1269
+          },
+          {
+            "url": "https://api.slack.com/authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 512
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "app": "Twilio",
+        "category": "Communications and Messaging",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://www.twilio.com/docs/usage/api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 251
+          },
+          {
+            "url": "https://www.twilio.com/docs/iam/api-keys",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 74
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "app": "Zoho Cliq",
+        "category": "Communications and Messaging",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://www.zoho.com/cliq/help/restapi/v2/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 39
+          },
+          {
+            "url": "https://www.zoho.com/cliq/help/restapi/v2/#authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 38
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "app": "Lark (Larksuite)",
+        "category": "Communications and Messaging",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://open.larksuite.com/document/home/index",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 312
+          },
+          {
+            "url": "https://open.larksuite.com/document/server-docs/authentication-management/access-token/tenant_access_token_internal",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 174
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "app": "Pumble",
+        "category": "Communications and Messaging",
+        "confidence": "low",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://pumble.com/help/integrations/api/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1678
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "app": "Discord",
+        "category": "Communications and Messaging",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://discord.com/developers/docs/intro",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 490
+          },
+          {
+            "url": "https://discord.com/developers/docs/topics/oauth2",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 342
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "app": "Telegram",
+        "category": "Communications and Messaging",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://core.telegram.org/bots/api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 581
+          },
+          {
+            "url": "https://core.telegram.org/api/auth",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 167
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "app": "WhatsApp Business",
+        "category": "Communications and Messaging",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.facebook.com/docs/whatsapp/cloud-api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1789
+          },
+          {
+            "url": "https://developers.facebook.com/docs/whatsapp/embedded-signup/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1533
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "app": "Aircall",
+        "category": "Communications and Messaging",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.aircall.io/api-references/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 718
+          },
+          {
+            "url": "https://developer.aircall.io/api-references/#authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 10
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "app": "Vonage",
+        "category": "Communications and Messaging",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.vonage.com/en/api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 676
+          },
+          {
+            "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 851
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "app": "Google Ads",
+        "category": "Marketing, Ads, Email and Social",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.google.com/google-ads/api/docs/start",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1163
+          },
+          {
+            "url": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 575
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "app": "Meta Ads",
+        "category": "Marketing, Ads, Email and Social",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.facebook.com/docs/marketing-apis",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1331
+          },
+          {
+            "url": "https://developers.facebook.com/docs/facebook-login/guides/access-tokens",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1434
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "app": "LinkedIn Ads",
+        "category": "Marketing, Ads, Email and Social",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://learn.microsoft.com/en-us/linkedin/marketing/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 514
+          },
+          {
+            "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 511
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "app": "GoHighLevel",
+        "category": "Marketing, Ads, Email and Social",
+        "confidence": "medium",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://highlevel.stoplight.io/docs/integrations/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 408
+          },
+          {
+            "url": "https://highlevel.stoplight.io/docs/integrations/ZG9jOjI4MzQ4Njg1-o-auth-2-0",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 515
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "app": "Mailchimp",
+        "category": "Marketing, Ads, Email and Social",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://mailchimp.com/developer/marketing/api/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 208
+          },
+          {
+            "url": "https://mailchimp.com/developer/marketing/docs/fundamentals/#authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 156
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "app": "Klaviyo",
+        "category": "Marketing, Ads, Email and Social",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.klaviyo.com/en/reference/api_overview",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 925
+          },
+          {
+            "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 222
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "app": "systeme.io",
+        "category": "Marketing, Ads, Email and Social",
+        "confidence": "low",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.systeme.io/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 771
+          }
+        ]
+      },
+      {
+        "id": 38,
+        "app": "Pinterest",
+        "category": "Marketing, Ads, Email and Social",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.pinterest.com/docs/api/v5/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 2533
+          },
+          {
+            "url": "https://developers.pinterest.com/docs/getting-started/authentication/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1338
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "app": "Threads (Meta)",
+        "category": "Marketing, Ads, Email and Social",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.facebook.com/docs/threads",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1731
+          },
+          {
+            "url": "https://developers.facebook.com/docs/threads/get-started",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1562
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "app": "SendGrid",
+        "category": "Marketing, Ads, Email and Social",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://www.twilio.com/docs/sendgrid/api-reference",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 762
+          },
+          {
+            "url": "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/api-keys",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 548
+          }
+        ]
+      },
+      {
+        "id": 41,
+        "app": "Shopify",
+        "category": "Ecommerce",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://shopify.dev/docs/api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 344
+          },
+          {
+            "url": "https://shopify.dev/docs/apps/build/authentication-authorization",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 386
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "app": "WooCommerce",
+        "category": "Ecommerce",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 391
+          },
+          {
+            "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 15
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "app": "BigCommerce",
+        "category": "Ecommerce",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": false,
+        "checks": [
+          {
+            "url": "https://developer.bigcommerce.com/docs/start",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 1437
+          },
+          {
+            "url": "https://developer.bigcommerce.com/docs/start/authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 167
+          }
+        ]
+      },
+      {
+        "id": 44,
+        "app": "Salesforce Commerce Cloud",
+        "category": "Ecommerce",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.salesforce.com/docs/commerce/commerce-api",
+            "status": 403,
+            "ok": true,
+            "latencyMs": 35
+          },
+          {
+            "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-shopper-apis.html",
+            "status": 403,
+            "ok": true,
+            "latencyMs": 86
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "app": "Magento (Adobe Commerce)",
+        "category": "Ecommerce",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": false,
+        "checks": [
+          {
+            "url": "https://developer.adobe.com/commerce/webapi/rest/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 94
+          },
+          {
+            "url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token/",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 37
+          }
+        ]
+      },
+      {
+        "id": 46,
+        "app": "Squarespace",
+        "category": "Ecommerce",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.squarespace.com/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1488
+          },
+          {
+            "url": "https://developers.squarespace.com/oauth",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1762
+          }
+        ]
+      },
+      {
+        "id": 47,
+        "app": "Ecwid",
+        "category": "Ecommerce",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://api-docs.ecwid.com/reference/rest-api-overview",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 239
+          },
+          {
+            "url": "https://api-docs.ecwid.com/reference/access-token",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 102
+          }
+        ]
+      },
+      {
+        "id": 48,
+        "app": "Gumroad",
+        "category": "Ecommerce",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://gumroad.com/api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 297
+          },
+          {
+            "url": "https://gumroad.com/api#section/Authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 265
+          }
+        ]
+      },
+      {
+        "id": 49,
+        "app": "Amazon Selling Partner",
+        "category": "Ecommerce",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer-docs.amazon.com/sp-api/docs",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 797
+          },
+          {
+            "url": "https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 345
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "app": "fanbasis",
+        "category": "Ecommerce",
+        "confidence": "low",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://www.fanbasis.com/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1147
+          }
+        ]
+      },
+      {
+        "id": 51,
+        "app": "DataForSEO",
+        "category": "Data, SEO and Scraping",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.dataforseo.com/v3/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 716
+          },
+          {
+            "url": "https://docs.dataforseo.com/v3/appendix-user-data/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 491
+          }
+        ]
+      },
+      {
+        "id": 52,
+        "app": "SE Ranking",
+        "category": "Data, SEO and Scraping",
+        "confidence": "medium",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://seranking.com/api.html",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 969
+          }
+        ]
+      },
+      {
+        "id": 53,
+        "app": "Ahrefs",
+        "category": "Data, SEO and Scraping",
+        "confidence": "medium",
+        "evidenceCount": 2,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": false,
+        "checks": [
+          {
+            "url": "https://docs.ahrefs.com/docs/api/site-explorer/overview",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 937
+          },
+          {
+            "url": "https://ahrefs.com/api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 467
+          }
+        ]
+      },
+      {
+        "id": 54,
+        "app": "MrScraper",
+        "category": "Data, SEO and Scraping",
+        "confidence": "medium",
+        "evidenceCount": 1,
+        "reachableEvidence": 0,
+        "allEvidenceReachable": false,
+        "checks": [
+          {
+            "url": "https://docs.mrscraper.com/",
+            "ok": false,
+            "status": null,
+            "latencyMs": 1227,
+            "error": "fetch failed"
+          }
+        ]
+      },
+      {
+        "id": 55,
+        "app": "Apify",
+        "category": "Data, SEO and Scraping",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.apify.com/api/v2",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 554
+          },
+          {
+            "url": "https://docs.apify.com/platform/integrations/api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 910
+          }
+        ]
+      },
+      {
+        "id": 56,
+        "app": "Firecrawl",
+        "category": "Data, SEO and Scraping",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.firecrawl.dev/api-reference/introduction",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 467
+          },
+          {
+            "url": "https://docs.firecrawl.dev/mcp-server",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 18
+          }
+        ]
+      },
+      {
+        "id": 57,
+        "app": "Bright Data",
+        "category": "Data, SEO and Scraping",
+        "confidence": "medium",
+        "evidenceCount": 2,
+        "reachableEvidence": 0,
+        "allEvidenceReachable": false,
+        "checks": [
+          {
+            "url": "https://docs.brightdata.com/api-reference/introduction",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 280
+          },
+          {
+            "url": "https://docs.brightdata.com/general/account/api-token",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 183
+          }
+        ]
+      },
+      {
+        "id": 58,
+        "app": "Sherlock",
+        "category": "Data, SEO and Scraping",
+        "confidence": "high",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://github.com/sherlock-project/sherlock",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 954
+          }
+        ]
+      },
+      {
+        "id": 59,
+        "app": "Waterfall.io",
+        "category": "Data, SEO and Scraping",
+        "confidence": "low",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://www.waterfall.io/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 426
+          }
+        ]
+      },
+      {
+        "id": 60,
+        "app": "Clay",
+        "category": "Data, SEO and Scraping",
+        "confidence": "low",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.clay.com/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1178
+          }
+        ]
+      },
+      {
+        "id": 61,
+        "app": "GitHub",
+        "category": "Developer, Infra and Data platforms",
+        "confidence": "high",
+        "evidenceCount": 3,
+        "reachableEvidence": 3,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.github.com/en/rest",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 99
+          },
+          {
+            "url": "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 16
+          },
+          {
+            "url": "https://github.com/github/github-mcp-server",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 533
+          }
+        ]
+      },
+      {
+        "id": 62,
+        "app": "Vercel",
+        "category": "Developer, Infra and Data platforms",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://vercel.com/docs/rest-api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 209
+          },
+          {
+            "url": "https://vercel.com/docs/rest-api#authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 98
+          }
+        ]
+      },
+      {
+        "id": 63,
+        "app": "Netlify",
+        "category": "Developer, Infra and Data platforms",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.netlify.com/api/get-started/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 566
+          },
+          {
+            "url": "https://docs.netlify.com/api/get-started/#authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 160
+          }
+        ]
+      },
+      {
+        "id": 64,
+        "app": "Cloudflare",
+        "category": "Developer, Infra and Data platforms",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.cloudflare.com/api/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 139
+          },
+          {
+            "url": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 32
+          }
+        ]
+      },
+      {
+        "id": 65,
+        "app": "Supabase",
+        "category": "Developer, Infra and Data platforms",
+        "confidence": "high",
+        "evidenceCount": 3,
+        "reachableEvidence": 3,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://supabase.com/docs",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 141
+          },
+          {
+            "url": "https://supabase.com/docs/guides/api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 83
+          },
+          {
+            "url": "https://supabase.com/docs/reference/api/introduction",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 211
+          }
+        ]
+      },
+      {
+        "id": 66,
+        "app": "Neo4j",
+        "category": "Developer, Infra and Data platforms",
+        "confidence": "medium",
+        "evidenceCount": 2,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": false,
+        "checks": [
+          {
+            "url": "https://neo4j.com/docs/api/",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 2969
+          },
+          {
+            "url": "https://neo4j.com/docs/aura/platform/api/overview/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 154
+          }
+        ]
+      },
+      {
+        "id": 67,
+        "app": "Snowflake",
+        "category": "Developer, Infra and Data platforms",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.snowflake.com/en/developer-guide/sql-api/index",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 946
+          },
+          {
+            "url": "https://docs.snowflake.com/en/user-guide/oauth-intro",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 542
+          }
+        ]
+      },
+      {
+        "id": 68,
+        "app": "MongoDB Atlas",
+        "category": "Developer, Infra and Data platforms",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://www.mongodb.com/docs/atlas/api/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 917
+          },
+          {
+            "url": "https://www.mongodb.com/docs/atlas/configure-api-access/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 411
+          }
+        ]
+      },
+      {
+        "id": 69,
+        "app": "Datadog",
+        "category": "Developer, Infra and Data platforms",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.datadoghq.com/api/latest/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 354
+          },
+          {
+            "url": "https://docs.datadoghq.com/account_management/api-app-keys/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 510
+          }
+        ]
+      },
+      {
+        "id": 70,
+        "app": "Sentry",
+        "category": "Developer, Infra and Data platforms",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.sentry.io/api/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 266
+          },
+          {
+            "url": "https://docs.sentry.io/api/auth/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 918
+          }
+        ]
+      },
+      {
+        "id": 71,
+        "app": "Notion",
+        "category": "Productivity and Project Management",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.notion.com/reference/intro",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 362
+          },
+          {
+            "url": "https://developers.notion.com/docs/authorization",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 535
+          }
+        ]
+      },
+      {
+        "id": 72,
+        "app": "Airtable",
+        "category": "Productivity and Project Management",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://airtable.com/developers/web/api/introduction",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 364
+          },
+          {
+            "url": "https://airtable.com/developers/web/api/authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 336
+          }
+        ]
+      },
+      {
+        "id": 73,
+        "app": "Linear",
+        "category": "Productivity and Project Management",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.linear.app/docs/graphql/working-with-the-graphql-api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 492
+          },
+          {
+            "url": "https://developers.linear.app/docs/oauth/authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 340
+          }
+        ]
+      },
+      {
+        "id": 74,
+        "app": "Jira",
+        "category": "Productivity and Project Management",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 840
+          },
+          {
+            "url": "https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 630
+          }
+        ]
+      },
+      {
+        "id": 75,
+        "app": "Asana",
+        "category": "Productivity and Project Management",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.asana.com/docs",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 520
+          },
+          {
+            "url": "https://developers.asana.com/docs/authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 232
+          }
+        ]
+      },
+      {
+        "id": 76,
+        "app": "Monday.com",
+        "category": "Productivity and Project Management",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.monday.com/api-reference/docs",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 673
+          },
+          {
+            "url": "https://developer.monday.com/api-reference/docs/authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 136
+          }
+        ]
+      },
+      {
+        "id": 77,
+        "app": "ClickUp",
+        "category": "Productivity and Project Management",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://clickup.com/api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 668
+          },
+          {
+            "url": "https://clickup.com/api/developer-portal/authentication/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 811
+          }
+        ]
+      },
+      {
+        "id": 78,
+        "app": "Coda",
+        "category": "Productivity and Project Management",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://coda.io/developers/apis/v1",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 73
+          },
+          {
+            "url": "https://coda.io/developers/apis/v1#section/Authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 11
+          }
+        ]
+      },
+      {
+        "id": 79,
+        "app": "Smartsheet",
+        "category": "Productivity and Project Management",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": false,
+        "checks": [
+          {
+            "url": "https://smartsheet.redoc.ly/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1119
+          },
+          {
+            "url": "https://smartsheet.redoc.ly/tag/oauth",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 6020
+          }
+        ]
+      },
+      {
+        "id": 80,
+        "app": "Harvest",
+        "category": "Productivity and Project Management",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://help.getharvest.com/api-v2/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 550
+          },
+          {
+            "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 357
+          }
+        ]
+      },
+      {
+        "id": 81,
+        "app": "Stripe",
+        "category": "Finance and Fintech",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.stripe.com/api",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 946
+          },
+          {
+            "url": "https://docs.stripe.com/keys",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 842
+          }
+        ]
+      },
+      {
+        "id": 82,
+        "app": "Plaid",
+        "category": "Finance and Fintech",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": false,
+        "checks": [
+          {
+            "url": "https://plaid.com/docs/api/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 962
+          },
+          {
+            "url": "https://plaid.com/docs/api/tokens/",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 1074
+          }
+        ]
+      },
+      {
+        "id": 83,
+        "app": "Binance",
+        "category": "Finance and Fintech",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api",
+            "status": 202,
+            "ok": true,
+            "latencyMs": 535
+          },
+          {
+            "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/request-security",
+            "status": 202,
+            "ok": true,
+            "latencyMs": 187
+          }
+        ]
+      },
+      {
+        "id": 84,
+        "app": "Paygent Connect",
+        "category": "Finance and Fintech",
+        "confidence": "low",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://www.paygent.com/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 213
+          }
+        ]
+      },
+      {
+        "id": 85,
+        "app": "iPayX",
+        "category": "Finance and Fintech",
+        "confidence": "low",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://ipayx.ai/docs",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 5285
+          }
+        ]
+      },
+      {
+        "id": 86,
+        "app": "QuickBooks",
+        "category": "Finance and Fintech",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/account",
+            "status": 405,
+            "ok": true,
+            "latencyMs": 1244
+          },
+          {
+            "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization",
+            "status": 405,
+            "ok": true,
+            "latencyMs": 272
+          }
+        ]
+      },
+      {
+        "id": 87,
+        "app": "Xero",
+        "category": "Finance and Fintech",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://developer.xero.com/documentation/api/accounting/overview",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1372
+          },
+          {
+            "url": "https://developer.xero.com/documentation/guides/oauth2/overview/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 483
+          }
+        ]
+      },
+      {
+        "id": 88,
+        "app": "Brex",
+        "category": "Finance and Fintech",
+        "confidence": "medium",
+        "evidenceCount": 2,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": false,
+        "checks": [
+          {
+            "url": "https://developer.brex.com/openapi",
+            "status": 404,
+            "ok": false,
+            "latencyMs": 1060
+          },
+          {
+            "url": "https://developer.brex.com/docs/authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 473
+          }
+        ]
+      },
+      {
+        "id": 89,
+        "app": "Ramp",
+        "category": "Finance and Fintech",
+        "confidence": "high",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.ramp.com/developer-api/v1/overview/introduction",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 89
+          },
+          {
+            "url": "https://docs.ramp.com/developer-api/v1/overview/authentication",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 34
+          }
+        ]
+      },
+      {
+        "id": 90,
+        "app": "PitchBook",
+        "category": "Finance and Fintech",
+        "confidence": "medium",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://pitchbook.com/products/data/api",
+            "status": 403,
+            "ok": true,
+            "latencyMs": 84
+          }
+        ]
+      },
+      {
+        "id": 91,
+        "app": "NotebookLM",
+        "category": "AI, Research and Media-native",
+        "confidence": "medium",
+        "evidenceCount": 2,
+        "reachableEvidence": 2,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://cloud.google.com/vertex-ai/generative-ai/docs",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 2206
+          },
+          {
+            "url": "https://ai.google.dev/gemini-api/docs",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1167
+          }
+        ]
+      },
+      {
+        "id": 92,
+        "app": "Otter AI",
+        "category": "AI, Research and Media-native",
+        "confidence": "low",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://help.otter.ai/",
+            "status": 403,
+            "ok": true,
+            "latencyMs": 1259
+          }
+        ]
+      },
+      {
+        "id": 93,
+        "app": "Fathom",
+        "category": "AI, Research and Media-native",
+        "confidence": "low",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://fathom.video/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 1448
+          }
+        ]
+      },
+      {
+        "id": 94,
+        "app": "Consensus",
+        "category": "AI, Research and Media-native",
+        "confidence": "low",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://consensus.app/",
+            "status": 403,
+            "ok": true,
+            "latencyMs": 59
+          }
+        ]
+      },
+      {
+        "id": 95,
+        "app": "Reducto",
+        "category": "AI, Research and Media-native",
+        "confidence": "medium",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.reducto.ai/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 2570
+          }
+        ]
+      },
+      {
+        "id": 96,
+        "app": "Devin",
+        "category": "AI, Research and Media-native",
+        "confidence": "medium",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://docs.devin.ai/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 682
+          }
+        ]
+      },
+      {
+        "id": 97,
+        "app": "higgsfield",
+        "category": "AI, Research and Media-native",
+        "confidence": "low",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://higgsfield.ai/cli",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 88
+          }
+        ]
+      },
+      {
+        "id": 98,
+        "app": "Mermaid CLI",
+        "category": "AI, Research and Media-native",
+        "confidence": "high",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://github.com/mermaid-js/mermaid-cli",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 943
+          }
+        ]
+      },
+      {
+        "id": 99,
+        "app": "YouTube Transcript",
+        "category": "AI, Research and Media-native",
+        "confidence": "medium",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://transcriptapi.com/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 224
+          }
+        ]
+      },
+      {
+        "id": 100,
+        "app": "Grain",
+        "category": "AI, Research and Media-native",
+        "confidence": "low",
+        "evidenceCount": 1,
+        "reachableEvidence": 1,
+        "allEvidenceReachable": true,
+        "checks": [
+          {
+            "url": "https://grain.com/",
+            "status": 200,
+            "ok": true,
+            "latencyMs": 182
+          }
+        ]
+      }
+    ]
+  },
+  "verificationSample": {
+    "generatedAt": "2026-07-09T17:31:35.471Z",
+    "sampleSize": 16,
+    "selectionLogic": "Stratified across confidence, gatedness, buildability, MCP status, API style, and category coverage.",
+    "sample": [
+      {
+        "app": "Pumble",
+        "category": "Communications and Messaging",
+        "reason": [
+          "low-confidence"
+        ],
+        "claim": {
+          "authMethods": [
+            "API token"
+          ],
+          "credentialAccess": "unclear",
+          "apiSurface": "Public API documentation appears limited compared with Slack-style platforms.",
+          "mcpStatus": "No official Pumble MCP found in baseline.",
+          "buildability": "needs-review",
+          "mainBlocker": "API breadth and credential access need confirmation."
+        },
+        "evidenceUrls": [
+          "https://pumble.com/help/integrations/api/"
+        ]
+      },
+      {
+        "app": "LinkedIn Ads",
+        "category": "Marketing, Ads, Email and Social",
+        "reason": [
+          "partner-gated"
+        ],
+        "claim": {
+          "authMethods": [
+            "OAuth2"
+          ],
+          "credentialAccess": "partner-gated",
+          "apiSurface": "Marketing APIs for ad accounts, campaigns, creatives, audiences, and analytics.",
+          "mcpStatus": "No official LinkedIn Ads MCP found in baseline.",
+          "buildability": "outreach-needed",
+          "mainBlocker": "LinkedIn Marketing API access is gated by product/app approval."
+        },
+        "evidenceUrls": [
+          "https://learn.microsoft.com/en-us/linkedin/marketing/",
+          "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow"
+        ]
+      },
+      {
+        "app": "Salesforce",
+        "category": "CRM and Sales",
+        "reason": [
+          "admin-gated"
+        ],
+        "claim": {
+          "authMethods": [
+            "OAuth2",
+            "JWT bearer",
+            "session token"
+          ],
+          "credentialAccess": "admin-gated",
+          "apiSurface": "Broad REST, SOAP, Bulk, Metadata, Streaming, and GraphQL surfaces.",
+          "mcpStatus": "No official Salesforce MCP found in baseline.",
+          "buildability": "buildable",
+          "mainBlocker": "Connected app setup and admin permissions."
+        },
+        "evidenceUrls": [
+          "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm",
+          "https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm"
+        ]
+      },
+      {
+        "app": "Copper",
+        "category": "CRM and Sales",
+        "reason": [
+          "paid-gated"
+        ],
+        "claim": {
+          "authMethods": [
+            "API key",
+            "user email"
+          ],
+          "credentialAccess": "paid-or-trial-gated",
+          "apiSurface": "REST API for people, companies, opportunities, projects, tasks, and webhooks.",
+          "mcpStatus": "No official Copper MCP found in baseline.",
+          "buildability": "buildable",
+          "mainBlocker": "Requires Copper account and API key from user/admin."
+        },
+        "evidenceUrls": [
+          "https://developer.copper.com/",
+          "https://developer.copper.com/introduction/authentication.html"
+        ]
+      },
+      {
+        "app": "HubSpot",
+        "category": "CRM and Sales",
+        "reason": [
+          "easy-win"
+        ],
+        "claim": {
+          "authMethods": [
+            "OAuth2",
+            "private app token"
+          ],
+          "credentialAccess": "self-serve",
+          "apiSurface": "Broad public CRM, marketing, files, events, and automation REST APIs.",
+          "mcpStatus": "No official HubSpot MCP found in baseline.",
+          "buildability": "easy-win",
+          "mainBlocker": "OAuth scopes and account object variation."
+        },
+        "evidenceUrls": [
+          "https://developers.hubspot.com/docs/api/overview",
+          "https://developers.hubspot.com/docs/apps/authentication/oauth-quickstart-guide"
+        ]
+      },
+      {
+        "app": "DealCloud",
+        "category": "CRM and Sales",
+        "reason": [
+          "outreach"
+        ],
+        "claim": {
+          "authMethods": [
+            "OAuth2",
+            "token"
+          ],
+          "credentialAccess": "paid-or-trial-gated",
+          "apiSurface": "Documented REST API for DealCloud customers.",
+          "mcpStatus": "No official DealCloud MCP found in baseline.",
+          "buildability": "outreach-needed",
+          "mainBlocker": "Customer/admin access and domain-specific schema."
+        },
+        "evidenceUrls": [
+          "https://api.docs.dealcloud.com/"
+        ]
+      },
+      {
+        "app": "Pipedrive",
+        "category": "CRM and Sales",
+        "reason": [
+          "official-mcp"
+        ],
+        "claim": {
+          "authMethods": [
+            "OAuth2",
+            "API token"
+          ],
+          "credentialAccess": "self-serve",
+          "apiSurface": "Broad REST API for deals, persons, orgs, activities, files, and webhooks.",
+          "mcpStatus": "No official Pipedrive MCP found in baseline.",
+          "buildability": "easy-win",
+          "mainBlocker": "Per-account API token handling and rate limits."
+        },
+        "evidenceUrls": [
+          "https://developers.pipedrive.com/docs/api/v1",
+          "https://pipedrive.readme.io/docs/core-api-concepts-authentication"
+        ]
+      },
+      {
+        "app": "Twenty",
+        "category": "CRM and Sales",
+        "reason": [
+          "graphql"
+        ],
+        "claim": {
+          "authMethods": [
+            "API key",
+            "OAuth2"
+          ],
+          "credentialAccess": "self-serve",
+          "apiSurface": "Open-source API surface with REST and GraphQL-oriented platform docs.",
+          "mcpStatus": "No official Twenty MCP found in baseline.",
+          "buildability": "easy-win",
+          "mainBlocker": "Version drift between cloud and self-hosted deployments."
+        },
+        "evidenceUrls": [
+          "https://twenty.com/developers",
+          "https://github.com/twentyhq/twenty"
+        ]
+      },
+      {
+        "app": "Attio",
+        "category": "CRM and Sales",
+        "reason": [
+          "category-coverage"
+        ],
+        "claim": {
+          "authMethods": [
+            "OAuth2",
+            "access token"
+          ],
+          "credentialAccess": "self-serve",
+          "apiSurface": "Public REST API for objects, records, lists, comments, notes, tasks, and webhooks.",
+          "mcpStatus": "No official Attio MCP found in baseline.",
+          "buildability": "easy-win",
+          "mainBlocker": "Object model mapping and scope design."
+        },
+        "evidenceUrls": [
+          "https://docs.attio.com/rest-api/endpoint-reference/overview",
+          "https://docs.attio.com/docs/authentication"
+        ]
+      },
+      {
+        "app": "Zendesk",
+        "category": "Support and Helpdesk",
+        "reason": [
+          "category-coverage"
+        ],
+        "claim": {
+          "authMethods": [
+            "OAuth2",
+            "API token",
+            "Basic"
+          ],
+          "credentialAccess": "admin-gated",
+          "apiSurface": "Broad REST APIs for support, help center, chat, users, and webhooks.",
+          "mcpStatus": "No official Zendesk MCP found in baseline.",
+          "buildability": "buildable",
+          "mainBlocker": "Admin token setup and product-specific APIs."
+        },
+        "evidenceUrls": [
+          "https://developer.zendesk.com/api-reference/",
+          "https://developer.zendesk.com/documentation/api-basics/authentication/"
+        ]
+      },
+      {
+        "app": "Slack",
+        "category": "Communications and Messaging",
+        "reason": [
+          "category-coverage"
+        ],
+        "claim": {
+          "authMethods": [
+            "OAuth2",
+            "bot token",
+            "user token"
+          ],
+          "credentialAccess": "self-serve",
+          "apiSurface": "Very broad Web API, Events API, Socket Mode, workflows, and app surfaces.",
+          "mcpStatus": "Official and community Slack MCP servers exist.",
+          "buildability": "easy-win",
+          "mainBlocker": "OAuth review, workspace install, and granular scopes."
+        },
+        "evidenceUrls": [
+          "https://api.slack.com/apis",
+          "https://api.slack.com/authentication"
+        ]
+      },
+      {
+        "app": "Google Ads",
+        "category": "Marketing, Ads, Email and Social",
+        "reason": [
+          "category-coverage"
+        ],
+        "claim": {
+          "authMethods": [
+            "OAuth2",
+            "developer token"
+          ],
+          "credentialAccess": "admin-gated",
+          "apiSurface": "Large gRPC/REST API for accounts, campaigns, ads, assets, reports, and conversions.",
+          "mcpStatus": "No official Google Ads MCP found in baseline.",
+          "buildability": "buildable",
+          "mainBlocker": "Developer token approval and OAuth consent."
+        },
+        "evidenceUrls": [
+          "https://developers.google.com/google-ads/api/docs/start",
+          "https://developers.google.com/google-ads/api/docs/oauth/overview"
+        ]
+      },
+      {
+        "app": "Shopify",
+        "category": "Ecommerce",
+        "reason": [
+          "category-coverage"
+        ],
+        "claim": {
+          "authMethods": [
+            "OAuth2",
+            "access token"
+          ],
+          "credentialAccess": "self-serve",
+          "apiSurface": "Very broad Admin GraphQL/REST, Storefront, webhooks, checkout, and app APIs.",
+          "mcpStatus": "No official Shopify MCP found in baseline.",
+          "buildability": "easy-win",
+          "mainBlocker": "App install, scopes, and store/admin permissions."
+        },
+        "evidenceUrls": [
+          "https://shopify.dev/docs/api",
+          "https://shopify.dev/docs/apps/build/authentication-authorization"
+        ]
+      },
+      {
+        "app": "DataForSEO",
+        "category": "Data, SEO and Scraping",
+        "reason": [
+          "category-coverage"
+        ],
+        "claim": {
+          "authMethods": [
+            "Basic",
+            "API login/password"
+          ],
+          "credentialAccess": "self-serve",
+          "apiSurface": "Broad REST APIs for SERP, keywords, backlinks, domain analytics, merchant, and on-page data.",
+          "mcpStatus": "No official DataForSEO MCP found in baseline.",
+          "buildability": "easy-win",
+          "mainBlocker": "Credit pricing and many endpoint families."
+        },
+        "evidenceUrls": [
+          "https://docs.dataforseo.com/v3/",
+          "https://docs.dataforseo.com/v3/appendix-user-data/"
+        ]
+      },
+      {
+        "app": "GitHub",
+        "category": "Developer, Infra and Data platforms",
+        "reason": [
+          "category-coverage"
+        ],
+        "claim": {
+          "authMethods": [
+            "OAuth2",
+            "GitHub App",
+            "fine-grained token",
+            "PAT"
+          ],
+          "credentialAccess": "self-serve",
+          "apiSurface": "Very broad REST and GraphQL APIs across repos, issues, PRs, actions, orgs, users, and security.",
+          "mcpStatus": "Official GitHub MCP Server exists.",
+          "buildability": "easy-win",
+          "mainBlocker": "Permission model and org install review."
+        },
+        "evidenceUrls": [
+          "https://docs.github.com/en/rest",
+          "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps",
+          "https://github.com/github/github-mcp-server"
+        ]
+      },
+      {
+        "app": "Notion",
+        "category": "Productivity and Project Management",
+        "reason": [
+          "category-coverage"
+        ],
+        "claim": {
+          "authMethods": [
+            "OAuth2",
+            "internal integration token"
+          ],
+          "credentialAccess": "self-serve",
+          "apiSurface": "Public REST API for pages, databases, blocks, comments, users, and search.",
+          "mcpStatus": "No official Notion MCP found in baseline.",
+          "buildability": "easy-win",
+          "mainBlocker": "Workspace install and database schema variation."
+        },
+        "evidenceUrls": [
+          "https://developers.notion.com/reference/intro",
+          "https://developers.notion.com/docs/authorization"
+        ]
+      }
+    ]
+  },
+  "agentRun": {
+    "generatedAt": "2026-07-09T17:35:18.210Z",
+    "pipeline": [
+      {
+        "stage": "seed",
+        "command": "npm run seed",
+        "output": "data/apps.json",
+        "result": "100 apps fixed from the research set."
+      },
+      {
+        "stage": "agent-research",
+        "command": "npm run research",
+        "output": "data/research-draft.json + .firecrawl/agent/",
+        "result": "Firecrawl-backed agent drafts structured rows when FIRECRAWL_API_KEY is available; curated final rows are stored in data/research.json."
+      },
+      {
+        "stage": "evidence-audit",
+        "command": "npm run evidence:audit",
+        "output": "data/evidence-audit.json",
+        "result": "162/179 evidence URLs reachable or gated-but-valid."
+      },
+      {
+        "stage": "sample",
+        "command": "npm run sample:verify",
+        "output": "data/verification-sample.json",
+        "result": "16 rows selected across risk and category strata."
+      },
+      {
+        "stage": "browser-verification",
+        "command": "npm run verify:sample",
+        "output": "data/verification-browser-use.json or data/verification.json",
+        "result": "11/16 correct first pass; 14/16 correct after correction."
+      },
+      {
+        "stage": "publish",
+        "command": "npm run build",
+        "output": "docs/assets/research-data.js",
+        "result": "Static data bundle generated for the HTML deck."
+      }
+    ],
+    "datasetSummary": {
+      "apps": 100,
+      "easyWins": 52,
+      "gated": 27,
+      "lowConfidence": 12,
+      "verificationChecks": 16
+    },
+    "correctionExamples": [
+      {
+        "app": "Pumble",
+        "result": "partial",
+        "correction": "Left low confidence rather than over-claiming Slack-like API breadth.",
+        "evidenceUrl": "https://pumble.com/help/integrations/api/"
+      },
+      {
+        "app": "systeme.io",
+        "result": "partial",
+        "correction": "Downgraded from buildable to needs-review.",
+        "evidenceUrl": "https://developer.systeme.io/"
+      },
+      {
+        "app": "Paygent Connect",
+        "result": "miss",
+        "correction": "Changed to partner-gated/low confidence because public docs were insufficient.",
+        "evidenceUrl": "https://www.paygent.com/"
+      },
+      {
+        "app": "NotebookLM",
+        "result": "miss",
+        "correction": "Separated NotebookLM product from Gemini/Vertex AI APIs; marked needs-review.",
+        "evidenceUrl": "https://cloud.google.com/vertex-ai/generative-ai/docs"
+      },
+      {
+        "app": "Otter AI",
+        "result": "partial",
+        "correction": "Kept low confidence until account-level docs can be verified.",
+        "evidenceUrl": "https://help.otter.ai/"
+      }
+    ]
+  },
   "counts": {
     "total": 100,
     "buildability": {

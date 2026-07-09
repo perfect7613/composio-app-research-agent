@@ -55,6 +55,28 @@ When `FIRECRAWL_API_KEY` is set, `scripts/research-agent.mjs` calls Firecrawl Ag
 
 The submitted `data/research.json` is the checked baseline used by the HTML page.
 
+Run the full local pipeline wrapper:
+
+```bash
+npm run pipeline
+```
+
+The pipeline stages are seed, research draft, evidence audit, stratified sample selection, Browser Use verification trigger, agent-run report, and static data bundle.
+
+## Evidence Audit
+
+```bash
+npm run evidence:audit
+npm run sample:verify
+npm run agent:report
+```
+
+These commands create:
+
+- `data/evidence-audit.json`: live URL reachability checks for evidence links.
+- `data/verification-sample.json`: stratified sample rows chosen for checking.
+- `data/agent-run-report.json`: stage-by-stage summary of what the research agent loop did.
+
 ## Verification
 
 Run the committed sample check:

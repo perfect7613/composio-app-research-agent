@@ -3,6 +3,9 @@ import { readJson } from "./lib.mjs";
 
 const research = readJson("data/research.json", []);
 const verification = readJson("data/verification.json", {});
+const evidenceAudit = readJson("data/evidence-audit.json", null);
+const verificationSample = readJson("data/verification-sample.json", null);
+const agentRun = readJson("data/agent-run-report.json", null);
 
 const counts = {
   total: research.length,
@@ -36,7 +39,7 @@ const insights = [
 mkdirSync("docs/assets", { recursive: true });
 writeFileSync(
   "docs/assets/research-data.js",
-  `window.RESEARCH_CASE_STUDY = ${JSON.stringify({ research, verification, counts, insights }, null, 2)};\n`
+  `window.RESEARCH_CASE_STUDY = ${JSON.stringify({ research, verification, evidenceAudit, verificationSample, agentRun, counts, insights }, null, 2)};\n`
 );
 console.log("Built docs/assets/research-data.js");
 

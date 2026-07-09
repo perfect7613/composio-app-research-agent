@@ -343,6 +343,30 @@
         line-height: 1.35;
       }
 
+      .proof-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .proof-item {
+        border: 1px solid var(--line);
+        background: #fbfcfb;
+        padding: 12px;
+      }
+
+      .proof-item b {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 18px;
+      }
+
+      .proof-item span {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.3;
+      }
+
       .trust-layout {
         min-height: 0;
         display: grid;
@@ -570,6 +594,7 @@
         .card-grid,
         .card-grid.two,
         .workflow,
+        .proof-strip,
         .trust-layout,
         .trust-flow,
         .example-grid {
@@ -659,16 +684,18 @@
               <h2>Agent first, human judgment where ambiguity matters.</h2>
             </div>
             <div class="workflow">
-              <article class="step"><span class="step-num">1</span><h3>Seed</h3><p>Fixed 100-app input list in `data/apps.json`.</p></article>
-              <article class="step"><span class="step-num">2</span><h3>Research</h3><p>Firecrawl drafts structured answers from official docs.</p></article>
-              <article class="step"><span class="step-num">3</span><h3>Normalize</h3><p>Auth, access, API surface, MCP, verdict, blocker, and evidence.</p></article>
-              <article class="step"><span class="step-num">4</span><h3>Verify</h3><p>Browser Use and manual checks sample high-risk rows.</p></article>
-              <article class="step"><span class="step-num">5</span><h3>Correct</h3><p>Misses and partials are recorded instead of hidden.</p></article>
+              <article class="step"><span class="step-num">1</span><h3>Seed</h3><p>Fix the 100-app input list and schema so every row is comparable.</p></article>
+              <article class="step"><span class="step-num">2</span><h3>Research</h3><p>Firecrawl drafts structured app records from official docs when a key is present.</p></article>
+              <article class="step"><span class="step-num">3</span><h3>Audit</h3><p>Evidence links are checked for reachability so dead docs become visible.</p></article>
+              <article class="step"><span class="step-num">4</span><h3>Sample</h3><p>Rows are selected across confidence, gatedness, auth, category, and verdict.</p></article>
+              <article class="step"><span class="step-num">5</span><h3>Correct</h3><p>Browser/manual checks mark hit, partial, or miss and update final claims.</p></article>
             </div>
+            <div class="proof-strip" id="agentProof"></div>
             <div class="tag-row">
+              <span class="command">npm run pipeline</span>
               <span class="command">npm run research:sample</span>
+              <span class="command">npm run evidence:audit</span>
               <span class="command">npm run verify:sample</span>
-              <span class="command">npm run build</span>
             </div>
           </div>
         </section>
@@ -862,6 +889,19 @@
         }).join("");
       }
 
+      function renderAgentProof() {
+        const audit = payload.evidenceAudit?.summary;
+        const report = payload.agentRun?.datasetSummary;
+        const sample = payload.verificationSample;
+        const corrections = payload.agentRun?.correctionExamples || [];
+        document.querySelector("#agentProof").innerHTML = [
+          [report?.apps || research.length, "apps normalized into final records"],
+          [audit ? `${audit.reachableEvidenceUrls}/${audit.totalEvidenceUrls}` : "not run", "evidence URLs reachable or gated-valid"],
+          [sample?.sampleSize || verification.firstPass.sampleSize, "rows selected for stratified verification"],
+          [corrections.length, "partial/miss corrections kept visible"]
+        ].map(([value, label]) => `<article class="proof-item"><b>${value}</b><span>${label}</span></article>`).join("");
+      }
+
       function populateSelect(id, field, label) {
         const values = [...new Set(research.map((row) => row[field]))].sort();
         document.querySelector(id).innerHTML = `<option value="">${label}</option>` + values.map((value) => `<option value="${value}">${labels[value] || value}</option>`).join("");
@@ -897,12 +937,13 @@
       function renderVerification() {
         const before = verification.firstPass;
         const after = verification.afterVerification;
+        const audit = payload.evidenceAudit?.summary;
         document.querySelector("#score").innerHTML = `
           <h3>Corrected Accuracy</h3>
           <strong>${Math.round(after.accuracy * 100)}%</strong>
           <p>First pass: ${before.correct}/${before.sampleSize} correct, ${before.partial} partial, ${before.wrong} wrong.</p>
           <p>After correction: ${after.correct}/${after.sampleSize} correct, ${after.partial} partial, ${after.wrong} wrong.</p>
-          <p class="note">Sampled across categories, auth types, gatedness, and low-confidence rows.</p>
+          <p class="note">${audit ? `${audit.appsWithReachableEvidence}/100 apps had at least one reachable evidence URL; ${audit.appsNeedingEvidenceReview.length} were flagged for evidence review.` : "Sampled across categories, auth types, gatedness, and low-confidence rows."}</p>
         `;
         const examples = ["Slack", "Pumble", "NotebookLM"].map((name) => verification.checks.find((check) => check.app === name)).filter(Boolean);
         document.querySelector("#checks").innerHTML = examples.map((check) => `
@@ -922,6 +963,7 @@
       renderMetrics();
       renderPreviewRows();
       renderBars();
+      renderAgentProof();
       renderRows();
       renderVerification();
       renderDeck();
